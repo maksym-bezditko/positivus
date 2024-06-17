@@ -5,6 +5,7 @@ import { MainSection } from "./components/sections/MainSection";
 import { ServiceSection } from "./components/sections/ServiceSection";
 import { BrandSection } from "./components/sections/BrandSection";
 import { MakeThingsHappenSection } from "./components/sections/MakeThingsHappenSection";
+import { CaseStudiesSection } from "./components/sections/CaseStudiesSection";
 
 const App = () => {
   return (
@@ -18,6 +19,8 @@ const App = () => {
       <ServiceSection />
 
       <MakeThingsHappenSection />
+
+      <CaseStudiesSection />
     </PageWrapper>
   );
 };

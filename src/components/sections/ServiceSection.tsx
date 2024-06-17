@@ -73,6 +73,7 @@ export const ServiceSection = () => {
           label="At our digital marketing agency, we offer a range of services to help
           businesses grow and succeed online. These services include:"
           fontWeight={300}
+          fontSize={18}
         />
       </StyledHeadingWrapper>
 
