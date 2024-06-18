@@ -1,15 +1,12 @@
----
-
 # Positivus
 
 ## Navigating the digital landscape for success
-
-![Positivus](./path/to/image.png)
 
 Positivus is a digital marketing agency that helps businesses grow and succeed online through a range of services including SEO, PPC, social media marketing, and content creation.
 
 ## Table of Contents
 
+- [UI](#ui)
 - [About](#about)
 - [Tech Stack](#tech-stack)
 - [Installation](#installation)
@@ -17,6 +14,13 @@ Positivus is a digital marketing agency that helps businesses grow and succeed o
 - [Scripts](#scripts)
 - [Inspiration](#inspiration)
 - [License](#license)
+
+## UI
+<details>
+<summary>Expand to see the UI</summary>
+
+![image](https://github.com/maksym-bezditko/positivus/assets/130133118/ee6a621e-10f9-4cc5-b8d8-0651dda3387a)
+</details>
 
 ## About
 
@@ -67,5 +71,3 @@ This project is inspired by the [Positivus Landing Page Design](https://www.figm
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
