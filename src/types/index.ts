@@ -13,3 +13,10 @@ export type WorkingProcessCard = {
   description: string;
   index: string;
 }
+
+export type TeamMember = {
+  imageSrc: string;
+  name: string;
+  position: string;
+  description: string;
+}

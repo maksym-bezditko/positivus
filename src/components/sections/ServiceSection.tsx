@@ -104,7 +104,7 @@ const StyledHeadingWrapper = styled.div`
   align-items: center;
   justify-content: start;
 
-  max-width: 1000px;
+  max-width: 800px;
 `;
 
 const StyledServicesList = styled.div`

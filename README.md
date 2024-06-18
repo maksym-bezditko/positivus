@@ -16,6 +16,7 @@ Positivus is a digital marketing agency that helps businesses grow and succeed o
 - [License](#license)
 
 ## UI
+
 <details>
 <summary>Expand to see the UI</summary>
 

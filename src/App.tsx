@@ -7,6 +7,7 @@ import { BrandSection } from "./components/sections/BrandSection";
 import { MakeThingsHappenSection } from "./components/sections/MakeThingsHappenSection";
 import { CaseStudiesSection } from "./components/sections/CaseStudiesSection";
 import { WorkingProcessSection } from "./components/sections/WorkingProcessSection";
+import { TeamSection } from "./components/sections/TeamSection";
 
 const App = () => {
   return (
@@ -24,6 +25,8 @@ const App = () => {
       <CaseStudiesSection />
 
       <WorkingProcessSection />
+
+      <TeamSection />
     </PageWrapper>
   );
 };

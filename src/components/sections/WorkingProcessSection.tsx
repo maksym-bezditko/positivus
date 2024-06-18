@@ -77,16 +77,16 @@ export const WorkingProcessSection = () => {
   );
 };
 
-const StyledWorkingProcessSectionWrapper = styled.div``;
+const StyledWorkingProcessSectionWrapper = styled.section``;
 
 const StyledHeadingWrapper = styled.div`
   display: grid;
   grid-auto-flow: column;
   grid-column-gap: 40px;
   align-items: center;
-	justify-content: start;
+  justify-content: start;
 
-  max-width: 1000px;
+  max-width: 800px;
 
   margin-bottom: 80px;
   margin-top: 140px;

@@ -58,7 +58,7 @@ const StyledHeadingWrapper = styled.div`
   align-items: center;
   justify-content: start;
 
-  max-width: 1000px;
+  max-width: 800px;
 `;
 
 const StyledCaseStudiesWrapper = styled.div`
@@ -69,7 +69,7 @@ const StyledCaseStudiesWrapper = styled.div`
   padding: 70px 60px;
   background-color: #191a23;
   border-radius: 45px;
-	margin-top: 80px;
+  margin-top: 80px;
 `;
 
 const StyledCaseStudy = styled.div`
