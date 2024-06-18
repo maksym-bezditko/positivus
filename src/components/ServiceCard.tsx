@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import { Typography } from "./Typography";
 import { LearnMore } from "./LearnMore";
+import { LearnMoreIconProps } from "./icons/LearnMoreIcon";
 
 type ServiceCardProps = {
   serviceText: string;
   serviceTextBackgroundColor: string;
-  learnMoreVariant: "default" | "sepia";
+  learnMoreVariant: LearnMoreIconProps["variant"];
   imageSrc: string;
   backgroundColor?: string;
 };

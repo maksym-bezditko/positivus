@@ -7,3 +7,9 @@ export type Service = {
   learnMoreVariant: LearnMoreIconProps["variant"];
   typographyBackgroundColor: string;
 };
+
+export type WorkingProcessCard = {
+  title: string;
+  description: string;
+  index: string;
+}

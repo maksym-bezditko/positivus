@@ -56,6 +56,7 @@ const StyledHeadingWrapper = styled.div`
   grid-auto-flow: column;
   grid-column-gap: 40px;
   align-items: center;
+  justify-content: start;
 
   max-width: 1000px;
 `;
