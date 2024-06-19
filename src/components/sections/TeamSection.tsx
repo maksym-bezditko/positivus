@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { Typography } from "../Typography";
 import { TeamMember } from "../TeamMember";
+import { Button } from "../Button";
+
 import type { TeamMember as TeamMemberType } from "../../types";
 
 import JohnSmith from "../../assets/team-members/john-smith.png";
@@ -9,7 +11,6 @@ import MichaelBrown from "../../assets/team-members/michael-brown.png";
 import EmilyJohnson from "../../assets/team-members/emily-johnson.png";
 import BrianWilliams from "../../assets/team-members/brian-williams.png";
 import SarahKim from "../../assets/team-members/sarah-kim.png";
-import { Button } from "../Button";
 
 const TEAM_MEMBERS: TeamMemberType[] = [
   {
@@ -115,6 +116,6 @@ const StyledTeamWrapper = styled.div`
 const StyledButtonWrapper = styled.div`
   display: grid;
   justify-content: end;
-  
+
   margin-top: 40px;
 `;

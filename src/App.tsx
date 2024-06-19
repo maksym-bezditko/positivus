@@ -8,6 +8,7 @@ import { MakeThingsHappenSection } from "./components/sections/MakeThingsHappenS
 import { CaseStudiesSection } from "./components/sections/CaseStudiesSection";
 import { WorkingProcessSection } from "./components/sections/WorkingProcessSection";
 import { TeamSection } from "./components/sections/TeamSection";
+import { TestimonialsSection } from "./components/sections/TestimonialsSection";
 
 const App = () => {
   return (
@@ -27,6 +28,8 @@ const App = () => {
       <WorkingProcessSection />
 
       <TeamSection />
+
+      <TestimonialsSection />
     </PageWrapper>
   );
 };
