@@ -80,7 +80,7 @@ export const ServiceSection = () => {
 const StyledServicesList = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 40px;
+  grid-gap: 35px;
 
   margin-top: 80px;
 `;

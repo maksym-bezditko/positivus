@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import styled, { css } from "styled-components";
 
 type TypographyProps = {
@@ -33,18 +34,32 @@ export const Typography = (props: TypographyProps) => {
     htmlFor,
   } = props;
 
-  const sharedProps = {
-    $fontSize: fontSize,
-    $fontWeight: fontWeight,
-    $lineHeight: lineHeight,
-    $color: color,
-    $backgroundColor: backgroundColor,
-    $borderRadius: borderRadius,
-    $paddingTop: paddingTop,
-    $paddingBottom: paddingBottom,
-    $paddingLeft: paddingLeft,
-    $paddingRight: paddingRight,
-  };
+  const sharedProps = useMemo(
+    () => ({
+      $fontSize: fontSize,
+      $fontWeight: fontWeight,
+      $lineHeight: lineHeight,
+      $color: color,
+      $backgroundColor: backgroundColor,
+      $borderRadius: borderRadius,
+      $paddingTop: paddingTop,
+      $paddingBottom: paddingBottom,
+      $paddingLeft: paddingLeft,
+      $paddingRight: paddingRight,
+    }),
+    [
+      backgroundColor,
+      borderRadius,
+      color,
+      fontSize,
+      fontWeight,
+      lineHeight,
+      paddingBottom,
+      paddingLeft,
+      paddingRight,
+      paddingTop,
+    ]
+  );
 
   switch (tag) {
     case "p":

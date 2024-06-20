@@ -65,5 +65,5 @@ export const WorkingProcessSection = () => {
 const StyledWorkingProcessWrapper = styled.div`
   display: grid;
   grid-auto-flow: row;
-  grid-row-gap: 30px;
+  grid-row-gap: 25px;
 `;

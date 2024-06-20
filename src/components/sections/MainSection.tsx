@@ -40,6 +40,8 @@ const StyledMainBannerWrapper = styled.section`
   justify-content: space-between;
   align-items: start;
   grid-column-gap: 160px;
+
+  overflow-x: hidden;
 `;
 
 const StyledTextContentWrapper = styled.div`

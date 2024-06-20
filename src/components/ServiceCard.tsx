@@ -55,6 +55,7 @@ const StyledServiceCardWrapper = styled.div<{
   min-height: 310px;
   border: 1px solid #000;
   box-shadow: 0px 4px 0px #000;
+  margin-bottom: 5px;
 `;
 
 const StyledDetailWrapper = styled.div`

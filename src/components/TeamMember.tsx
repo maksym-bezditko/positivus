@@ -45,6 +45,7 @@ const StyledTeamMember = styled.div`
   max-height: 350px;
   border-radius: 45px;
   padding: 20px 35px;
+  margin-bottom: 4px;
 `;
 
 const StyledTopPartWrapper = styled.div`

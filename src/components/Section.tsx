@@ -23,11 +23,7 @@ export const Section = (props: SectionProps) => {
           paddingRight={7}
         />
 
-        <Typography
-          label={description}
-          fontWeight={300}
-          fontSize={18}
-        />
+        <Typography label={description} fontWeight={300} fontSize={18} />
       </StyledHeadingWrapper>
 
       {children}
@@ -35,7 +31,9 @@ export const Section = (props: SectionProps) => {
   );
 };
 
-const StyledSectionWrapper = styled.section``;
+const StyledSectionWrapper = styled.section`
+  overflow-x: hidden;
+`;
 
 const StyledHeadingWrapper = styled.div`
   display: grid;

@@ -80,7 +80,7 @@ export const TeamSection = () => {
 const StyledTeamWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 40px;
+  grid-gap: 35px;
 `;
 
 const StyledButtonWrapper = styled.div`

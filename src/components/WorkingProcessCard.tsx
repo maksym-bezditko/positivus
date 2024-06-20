@@ -46,6 +46,7 @@ const StyledWorkingProcessCard = styled.div<{
   border-radius: 45px;
   box-shadow: 0px 4px 0px #000;
   padding: 40px 60px;
+  margin-bottom: 5px;
 
   transition: all 0.4s ease-in-out;
 `;
