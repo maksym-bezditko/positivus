@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import type { WorkingProcessCard as WorkingProcessCardType } from "../../types";
 import { WorkingProcessCard } from "../WorkingProcessCard";
-import { Typography } from "../Typography";
+import { Section } from "../Section";
 
 const WORKING_PROCESSES: WorkingProcessCardType[] = [
   {
@@ -44,25 +44,10 @@ const WORKING_PROCESSES: WorkingProcessCardType[] = [
 
 export const WorkingProcessSection = () => {
   return (
-    <StyledWorkingProcessSectionWrapper>
-      <StyledHeadingWrapper>
-        <Typography
-          label="Our Working Process"
-          backgroundColor="#b9ff66"
-          fontSize={40}
-          fontWeight={500}
-          borderRadius={7}
-          paddingLeft={7}
-          paddingRight={7}
-        />
-
-        <Typography
-          label="Step-by-Step Guide to Achieving Your Business Goals"
-          fontWeight={300}
-          fontSize={18}
-        />
-      </StyledHeadingWrapper>
-
+    <Section
+      title="Our Working Process"
+      description="Step-by-Step Guide to Achieving Your Business Goals"
+    >
       <StyledWorkingProcessWrapper>
         {WORKING_PROCESSES.map((workingProcess) => (
           <WorkingProcessCard
@@ -73,24 +58,9 @@ export const WorkingProcessSection = () => {
           />
         ))}
       </StyledWorkingProcessWrapper>
-    </StyledWorkingProcessSectionWrapper>
+    </Section>
   );
 };
-
-const StyledWorkingProcessSectionWrapper = styled.section``;
-
-const StyledHeadingWrapper = styled.div`
-  display: grid;
-  grid-auto-flow: column;
-  grid-column-gap: 40px;
-  align-items: center;
-  justify-content: start;
-
-  max-width: 800px;
-
-  margin-bottom: 80px;
-  margin-top: 140px;
-`;
 
 const StyledWorkingProcessWrapper = styled.div`
   display: grid;

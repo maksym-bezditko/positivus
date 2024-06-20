@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Typography } from "../Typography";
 import { LearnMore } from "../LearnMore";
+import { Section } from "../Section";
 
 const CASE_STUDIES = [
   "For a local restaurant, we implemented a targeted PPC campaign that resulted in a 50% increase in website traffic and a 25% increase in sales.",
@@ -10,25 +11,10 @@ const CASE_STUDIES = [
 
 export const CaseStudiesSection = () => {
   return (
-    <StyledCaseStudiesSection>
-      <StyledHeadingWrapper>
-        <Typography
-          label="Case Studies"
-          backgroundColor="#b9ff66"
-          fontSize={40}
-          fontWeight={500}
-          borderRadius={7}
-          paddingLeft={7}
-          paddingRight={7}
-        />
-
-        <Typography
-          label="Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies"
-          fontWeight={300}
-          fontSize={18}
-        />
-      </StyledHeadingWrapper>
-
+    <Section
+      title="Case Studies"
+      description="Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies"
+    >
       <StyledCaseStudiesWrapper>
         {CASE_STUDIES.map((caseStudy) => (
           <StyledCaseStudy key={caseStudy}>
@@ -43,23 +29,9 @@ export const CaseStudiesSection = () => {
           </StyledCaseStudy>
         ))}
       </StyledCaseStudiesWrapper>
-    </StyledCaseStudiesSection>
+    </Section>
   );
 };
-
-const StyledCaseStudiesSection = styled.section`
-  margin-top: 150px;
-`;
-
-const StyledHeadingWrapper = styled.div`
-  display: grid;
-  grid-auto-flow: column;
-  grid-column-gap: 40px;
-  align-items: center;
-  justify-content: start;
-
-  max-width: 800px;
-`;
 
 const StyledCaseStudiesWrapper = styled.div`
   display: grid;

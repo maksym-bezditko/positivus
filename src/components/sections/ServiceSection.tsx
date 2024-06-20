@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Service } from "../../types";
 import { ServiceCard } from "../ServiceCard";
+import { Section } from "../Section";
 
 import Ads from "../../assets/services/ads.png";
 import Analytics from "../../assets/services/analytics.png";
@@ -8,7 +9,6 @@ import Content from "../../assets/services/content.png";
 import Email from "../../assets/services/email.png";
 import Seo from "../../assets/services/seo.png";
 import Smm from "../../assets/services/smm.png";
-import { Typography } from "../Typography";
 
 const SERVICES: Service[] = [
   {
@@ -57,26 +57,10 @@ const SERVICES: Service[] = [
 
 export const ServiceSection = () => {
   return (
-    <StyledServicesSection>
-      <StyledHeadingWrapper>
-        <Typography
-          label="Services"
-          backgroundColor="#b9ff66"
-          fontSize={40}
-          fontWeight={500}
-          borderRadius={7}
-          paddingLeft={7}
-          paddingRight={7}
-        />
-
-        <Typography
-          label="At our digital marketing agency, we offer a range of services to help
-          businesses grow and succeed online. These services include:"
-          fontWeight={300}
-          fontSize={18}
-        />
-      </StyledHeadingWrapper>
-
+    <Section
+      title="Services"
+      description="At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include:"
+    >
       <StyledServicesList>
         {SERVICES.map((service) => (
           <ServiceCard
@@ -89,23 +73,9 @@ export const ServiceSection = () => {
           />
         ))}
       </StyledServicesList>
-    </StyledServicesSection>
+    </Section>
   );
 };
-
-const StyledServicesSection = styled.section`
-  margin-top: 140px;
-`;
-
-const StyledHeadingWrapper = styled.div`
-  display: grid;
-  grid-auto-flow: column;
-  grid-column-gap: 40px;
-  align-items: center;
-  justify-content: start;
-
-  max-width: 800px;
-`;
 
 const StyledServicesList = styled.div`
   display: grid;

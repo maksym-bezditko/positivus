@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Typography } from "../Typography";
 import { TeamMember } from "../TeamMember";
 import { Button } from "../Button";
 
@@ -11,6 +10,7 @@ import MichaelBrown from "../../assets/team-members/michael-brown.png";
 import EmilyJohnson from "../../assets/team-members/emily-johnson.png";
 import BrianWilliams from "../../assets/team-members/brian-williams.png";
 import SarahKim from "../../assets/team-members/sarah-kim.png";
+import { Section } from "../Section";
 
 const TEAM_MEMBERS: TeamMemberType[] = [
   {
@@ -60,25 +60,10 @@ const TEAM_MEMBERS: TeamMemberType[] = [
 
 export const TeamSection = () => {
   return (
-    <StyledTeamSectionWrapper>
-      <StyledHeadingWrapper>
-        <Typography
-          label="Team"
-          backgroundColor="#b9ff66"
-          fontSize={40}
-          fontWeight={500}
-          borderRadius={7}
-          paddingLeft={7}
-          paddingRight={7}
-        />
-
-        <Typography
-          label="Meet the skilled and experienced team behind our successful digital marketing strategies"
-          fontWeight={300}
-          fontSize={18}
-        />
-      </StyledHeadingWrapper>
-
+    <Section
+      title="Team"
+      description="Meet the skilled and experienced team behind our successful digital marketing strategies"
+    >
       <StyledTeamWrapper>
         {TEAM_MEMBERS.map((member) => (
           <TeamMember key={member.name} {...member} />
@@ -88,24 +73,9 @@ export const TeamSection = () => {
       <StyledButtonWrapper>
         <Button label="See all team" width="270px" />
       </StyledButtonWrapper>
-    </StyledTeamSectionWrapper>
+    </Section>
   );
 };
-
-const StyledTeamSectionWrapper = styled.section``;
-
-const StyledHeadingWrapper = styled.div`
-  display: grid;
-  grid-auto-flow: column;
-  grid-column-gap: 40px;
-  align-items: center;
-  justify-content: start;
-
-  max-width: 800px;
-
-  margin-bottom: 80px;
-  margin-top: 140px;
-`;
 
 const StyledTeamWrapper = styled.div`
   display: grid;
