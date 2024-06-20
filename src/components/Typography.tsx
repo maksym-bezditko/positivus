@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 type TypographyProps = {
   label: string;
-  tag?: "p" | "span" | "h1" | "h2" | "h3";
+  tag?: "p" | "span" | "h1" | "h2" | "h3" | "label";
   lineHeight?: number;
   fontSize?: number;
   color?: string;
@@ -13,6 +13,7 @@ type TypographyProps = {
   paddingBottom?: number;
   paddingLeft?: number;
   paddingRight?: number;
+  htmlFor?: string;
 };
 
 export const Typography = (props: TypographyProps) => {
@@ -29,6 +30,7 @@ export const Typography = (props: TypographyProps) => {
     paddingBottom = 0,
     paddingLeft = 0,
     paddingRight = 0,
+    htmlFor,
   } = props;
 
   const sharedProps = {
@@ -55,6 +57,12 @@ export const Typography = (props: TypographyProps) => {
       return <StyledH2 {...sharedProps}>{label}</StyledH2>;
     case "h3":
       return <StyledH3 {...sharedProps}>{label}</StyledH3>;
+    case "label":
+      return (
+        <StyledLabel {...sharedProps} htmlFor={htmlFor}>
+          {label}
+        </StyledLabel>
+      );
     default:
       return <StyledP {...sharedProps}>{label}</StyledP>;
   }
@@ -109,5 +117,9 @@ const StyledH2 = styled.h2<SharedTypographyProps>`
 `;
 
 const StyledH3 = styled.h3<SharedTypographyProps>`
+  ${StyledTypography}
+`;
+
+const StyledLabel = styled.label<SharedTypographyProps>`
   ${StyledTypography}
 `;

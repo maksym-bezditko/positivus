@@ -4,13 +4,26 @@ type ButtonProps = {
   label: string;
   isInverted?: boolean;
   width?: string;
+  marginTop?: string;
+  type?: "button" | "submit" | "reset";
 };
 
 export const Button = (props: ButtonProps) => {
-  const { label, isInverted = false, width = "auto" } = props;
+  const {
+    label,
+    isInverted = false,
+    width = "auto",
+    marginTop = "0px",
+    type = "button",
+  } = props;
 
   return (
-    <StyledButton $isInverted={isInverted} $width={width}>
+    <StyledButton
+      $isInverted={isInverted}
+      $width={width}
+      $marginTop={marginTop}
+      type={type}
+    >
       {label}
     </StyledButton>
   );
@@ -19,6 +32,7 @@ export const Button = (props: ButtonProps) => {
 const StyledButton = styled.button<{
   $isInverted?: boolean;
   $width?: string;
+  $marginTop?: string;
 }>`
   padding: 20px 35px;
   transition: all 0.3s ease-in-out;
@@ -27,6 +41,7 @@ const StyledButton = styled.button<{
   background-color: ${(props) => (props.$isInverted ? "#fff" : "#000")};
   color: ${(props) => (props.$isInverted ? "#000" : "#fff")};
   width: ${(props) => props.$width};
+  margin-top: ${(props) => props.$marginTop};
   cursor: pointer;
 
   &:hover {

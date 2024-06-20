@@ -9,6 +9,7 @@ import { CaseStudiesSection } from "./components/sections/CaseStudiesSection";
 import { WorkingProcessSection } from "./components/sections/WorkingProcessSection";
 import { TeamSection } from "./components/sections/TeamSection";
 import { TestimonialsSection } from "./components/sections/TestimonialsSection";
+import { ContactUsSection } from "./components/sections/ContactUsSection";
 
 const App = () => {
   return (
@@ -30,6 +31,8 @@ const App = () => {
       <TeamSection />
 
       <TestimonialsSection />
+
+      <ContactUsSection />
     </PageWrapper>
   );
 };

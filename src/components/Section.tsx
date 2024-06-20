@@ -49,12 +49,3 @@ const StyledHeadingWrapper = styled.div`
   margin-bottom: 80px;
   margin-top: 140px;
 `;
-
-const StyledTestimonialsWrapper = styled.div`
-  display: grid;
-  grid-auto-flow: row;
-  grid-row-gap: 30px;
-
-	overflow: hidden;
-`;
-
