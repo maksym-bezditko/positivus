@@ -20,7 +20,13 @@ export const MakeThingsHappenSection = () => {
         />
 
         <StyledButtonWrapper>
-          <Button label="Book a consultation" />
+          <Button
+            label="Book a consultation"
+            backgroundColor="#000"
+            hoverBackgroundColor="#fff"
+            color="#fff"
+            hoverColor="#000"
+          />
         </StyledButtonWrapper>
       </StyledDetailsWrapper>
 

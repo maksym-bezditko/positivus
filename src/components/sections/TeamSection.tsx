@@ -71,7 +71,14 @@ export const TeamSection = () => {
       </StyledTeamWrapper>
 
       <StyledButtonWrapper>
-        <Button label="See all team" width="270px" />
+        <Button
+          label="See all team"
+          width="270px"
+          backgroundColor="#000"
+          hoverBackgroundColor="#fff"
+          color="#fff"
+          hoverColor="#000"
+        />
       </StyledButtonWrapper>
     </Section>
   );

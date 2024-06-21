@@ -17,25 +17,26 @@ export const ContactUsForm = () => {
     <StyledFormWrapper>
       <StyledForm onSubmit={handleSubmit}>
         <StyledRadioButtonWrapper>
-          <StyledRadioButton onClick={() => setIsSayHi(true)}>
+          <StyledRadioButton>
             <StyledInput
               type="radio"
               id="say-hi"
               name="appeal-type"
               value="say-hi"
               checked={isSayHi}
+              onChange={() => setIsSayHi(true)}
             />
 
             <Typography htmlFor="say-hi" label="Say Hi" tag="label" />
           </StyledRadioButton>
 
-          <StyledRadioButton onClick={() => setIsSayHi(false)}>
+          <StyledRadioButton>
             <StyledInput
               type="radio"
               id="get-a-quote"
               name="appeal-type"
               value="get-a-quote"
-              checked={!isSayHi}
+              onChange={() => setIsSayHi(false)}
             />
 
             <Typography htmlFor="get-a-quote" label="Get a Quote" tag="label" />
@@ -48,7 +49,15 @@ export const ContactUsForm = () => {
 
         <FormInput label="Message" inputFieldType="textarea" isRequired />
 
-        <Button label="Send Message" marginTop="15px" type="submit" />
+        <Button
+          label="Send Message"
+          marginTop="15px"
+          type="submit"
+          backgroundColor="#000"
+          hoverBackgroundColor="#fff"
+          color="#fff"
+          hoverColor="#000"
+        />
       </StyledForm>
 
       <StyledDecorationWrapper>

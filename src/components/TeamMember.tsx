@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Typography } from "./Typography";
-import { LinkedInIcon } from "./icons/LinkedInIcon";
+import { LinkedInIcon } from "./icons/LinkedInTeamMemberIcon";
 import type { TeamMember as TeamMemberType } from "../types";
 
 type TeamMemberProps = TeamMemberType;
@@ -27,10 +27,7 @@ export const TeamMember = (props: TeamMemberProps) => {
       </StyledTopPartWrapper>
 
       <StyledBottomPartWrapper>
-        <Typography
-          label={description}
-          fontSize={18}
-        />
+        <Typography label={description} fontSize={18} />
       </StyledBottomPartWrapper>
     </StyledTeamMember>
   );

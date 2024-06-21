@@ -23,7 +23,13 @@ export const MainSection = () => {
         />
 
         <StyledButtonWrapper>
-          <Button label="Book a consultation" />
+          <Button
+            label="Book a consultation"
+            backgroundColor="#000"
+            hoverBackgroundColor="#fff"
+            color="#fff"
+            hoverColor="#000"
+          />
         </StyledButtonWrapper>
       </StyledTextContentWrapper>
 
@@ -42,6 +48,7 @@ const StyledMainBannerWrapper = styled.section`
   grid-column-gap: 160px;
 
   overflow-x: hidden;
+  margin: 70px 0;
 `;
 
 const StyledTextContentWrapper = styled.div`

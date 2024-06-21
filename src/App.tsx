@@ -10,6 +10,7 @@ import { WorkingProcessSection } from "./components/sections/WorkingProcessSecti
 import { TeamSection } from "./components/sections/TeamSection";
 import { TestimonialsSection } from "./components/sections/TestimonialsSection";
 import { ContactUsSection } from "./components/sections/ContactUsSection";
+import { FooterSection } from "./components/sections/FooterSection";
 
 const App = () => {
   return (
@@ -33,21 +34,15 @@ const App = () => {
       <TestimonialsSection />
 
       <ContactUsSection />
+
+      <FooterSection />
     </PageWrapper>
   );
 };
 
 const PageWrapper = styled.div`
   padding-top: 60px;
-  padding: 60px 100px 1000px;
-
-  & > * {
-    margin-bottom: 70px;
-  }
-
-  @media (min-width: 768px) {
-    padding-top: 30px;
-  }
+  padding: 60px 100px 0;
 `;
 
 export default App;

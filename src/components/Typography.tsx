@@ -4,6 +4,7 @@ import styled, { css } from "styled-components";
 type TypographyProps = {
   label: string;
   tag?: "p" | "span" | "h1" | "h2" | "h3" | "label";
+  href?: string;
   lineHeight?: number;
   fontSize?: number;
   color?: string;
@@ -15,11 +16,17 @@ type TypographyProps = {
   paddingLeft?: number;
   paddingRight?: number;
   htmlFor?: string;
+  isEmail?: boolean;
+  isPhone?: boolean;
+  isUnderlined?: boolean;
+  underlineHeight?: number;
 };
 
 export const Typography = (props: TypographyProps) => {
   const {
     label,
+    htmlFor,
+    href,
     tag = "p",
     lineHeight = 1.4,
     fontSize = 20,
@@ -31,7 +38,10 @@ export const Typography = (props: TypographyProps) => {
     paddingBottom = 0,
     paddingLeft = 0,
     paddingRight = 0,
-    htmlFor,
+    isEmail = false,
+    isPhone = false,
+    isUnderlined = false,
+    underlineHeight = 2,
   } = props;
 
   const sharedProps = useMemo(
@@ -46,6 +56,8 @@ export const Typography = (props: TypographyProps) => {
       $paddingBottom: paddingBottom,
       $paddingLeft: paddingLeft,
       $paddingRight: paddingRight,
+      $isUnderlined: isUnderlined,
+      $underlineHeight: underlineHeight,
     }),
     [
       backgroundColor,
@@ -58,8 +70,36 @@ export const Typography = (props: TypographyProps) => {
       paddingLeft,
       paddingRight,
       paddingTop,
+      isUnderlined,
+      underlineHeight,
     ]
   );
+
+  if (isEmail) {
+    return (
+      <StyledP {...sharedProps}>
+        <StyledAnchor {...sharedProps} href={`mailto:${label}`}>
+          Email: {label}
+        </StyledAnchor>
+      </StyledP>
+    );
+  }
+
+  if (isPhone) {
+    return (
+      <StyledAnchor {...sharedProps} href={`tel:${label}`}>
+        Phone: {label}
+      </StyledAnchor>
+    );
+  }
+
+  if (href) {
+    return (
+      <StyledAnchor {...sharedProps} href={href}>
+        {label}
+      </StyledAnchor>
+    );
+  }
 
   switch (tag) {
     case "p":
@@ -94,6 +134,8 @@ type SharedTypographyProps = {
   $paddingBottom: number;
   $paddingLeft: number;
   $paddingRight: number;
+  $isUnderlined: boolean;
+  $underlineHeight: number;
 };
 
 const StyledTypography = css<SharedTypographyProps>`
@@ -113,6 +155,18 @@ const StyledTypography = css<SharedTypographyProps>`
   padding-bottom: ${(props) => props.$paddingBottom}px;
   padding-left: ${(props) => props.$paddingLeft}px;
   padding-right: ${(props) => props.$paddingRight}px;
+
+  ${(props) =>
+    props.$isUnderlined &&
+    `
+    &:after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: ${props.$underlineHeight}px;
+      background-color: ${props.$color};
+    }
+  `}
 `;
 
 const StyledP = styled.p<SharedTypographyProps>`
@@ -136,5 +190,12 @@ const StyledH3 = styled.h3<SharedTypographyProps>`
 `;
 
 const StyledLabel = styled.label<SharedTypographyProps>`
+  ${StyledTypography}
+`;
+
+const StyledAnchor = styled.a<SharedTypographyProps>`
+  display: inline;
+  text-decoration: none;
+
   ${StyledTypography}
 `;
