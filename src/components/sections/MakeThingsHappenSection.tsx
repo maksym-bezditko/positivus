@@ -1,8 +1,9 @@
-import styled from "styled-components";
-import { Typography } from "../Typography";
-import { Button } from "../Button";
+import styled from 'styled-components';
+import { Typography } from '../Typography';
+import { Button } from '../Button';
 
-import MakeThingsHappenImage from "../../assets/make-things-happen.png";
+import { theme } from '../../theme/theme';
+import { MakeThingsHappenDecor } from '../svg/MakeThingsHappenDecor';
 
 export const MakeThingsHappenSection = () => {
   return (
@@ -22,16 +23,16 @@ export const MakeThingsHappenSection = () => {
         <StyledButtonWrapper>
           <Button
             label="Book a consultation"
-            backgroundColor="#000"
-            hoverBackgroundColor="#fff"
-            color="#fff"
-            hoverColor="#000"
+            backgroundColor={theme.colors.black}
+            hoverBackgroundColor={theme.colors.white}
+            color={theme.colors.white}
+            hoverColor={theme.colors.black}
           />
         </StyledButtonWrapper>
       </StyledDetailsWrapper>
 
       <StyledImageWrapper>
-        <StyledImage src={MakeThingsHappenImage} alt="Make things happen" />
+        <MakeThingsHappenDecor />
       </StyledImageWrapper>
     </StyledBannerWrapper>
   );
@@ -47,7 +48,7 @@ const StyledBannerWrapper = styled.div`
 
   margin-top: 125px;
   padding: 60px;
-  background-color: #f3f3f3;
+  background-color: ${({ theme }) => theme.colors.lightGrey};
   border-radius: 45px;
 `;
 
@@ -62,9 +63,4 @@ const StyledButtonWrapper = styled.div``;
 const StyledImageWrapper = styled.div`
   display: grid;
   justify-content: center;
-`;
-
-const StyledImage = styled.img`
-  max-width: 190px;
-  transform: scale(2);
 `;

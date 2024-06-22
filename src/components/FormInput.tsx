@@ -1,9 +1,10 @@
-import styled from "styled-components";
-import { Typography } from "./Typography";
+import styled from 'styled-components';
+import { Typography } from './Typography';
+import { theme } from '../theme/theme';
 
 type FormInputProps = {
   label: string;
-  inputFieldType: "text" | "textarea" | "email";
+  inputFieldType: 'text' | 'textarea' | 'email';
   isRequired?: boolean;
   withLabel?: boolean;
   borderColor?: string;
@@ -18,30 +19,30 @@ export const FormInput = (props: FormInputProps) => {
     inputFieldType,
     isRequired,
     withLabel = true,
-    borderColor = "#000",
-    backgroundColor = "#fff",
-    color = "#000",
-    height = inputFieldType === "textarea" ? "200px" :  "auto",
+    borderColor = theme.colors.black,
+    backgroundColor = theme.colors.white,
+    color = theme.colors.black,
+    height = inputFieldType === 'textarea' ? '200px' : 'auto'
   } = props;
 
   const sharedProps = {
     $borderColor: borderColor,
     $color: color,
     $backgroundColor: backgroundColor,
-    $height: height,
+    $height: height
   };
 
   return (
     <StyledWrapper>
       {withLabel && (
         <Typography
-          label={label + (isRequired ? "*" : "")}
+          label={label + (isRequired ? '*' : '')}
           fontSize={16}
           lineHeight={2}
         />
       )}
 
-      {inputFieldType === "text" && (
+      {inputFieldType === 'text' && (
         <StyledInput
           type="text"
           required={isRequired}
@@ -50,7 +51,7 @@ export const FormInput = (props: FormInputProps) => {
         />
       )}
 
-      {inputFieldType === "email" && (
+      {inputFieldType === 'email' && (
         <StyledInput
           type="email"
           required={isRequired}
@@ -59,7 +60,7 @@ export const FormInput = (props: FormInputProps) => {
         />
       )}
 
-      {inputFieldType === "textarea" && (
+      {inputFieldType === 'textarea' && (
         <StyledTextarea
           required={isRequired}
           placeholder={label}

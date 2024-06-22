@@ -1,3 +1,5 @@
+import { theme } from '../../theme/theme';
+
 export const MinusIcon = () => {
   return (
     <svg
@@ -7,7 +9,7 @@ export const MinusIcon = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path d="M0 6.14V0.5H17.76V6.14H0Z" fill="black" />
+      <path d="M0 6.14V0.5H17.76V6.14H0Z" fill={theme.colors.black} />
     </svg>
   );
 };

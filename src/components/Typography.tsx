@@ -1,9 +1,10 @@
-import { useMemo } from "react";
-import styled, { css } from "styled-components";
+import { useMemo } from 'react';
+import styled, { css } from 'styled-components';
+import { theme } from '../theme/theme';
 
 type TypographyProps = {
   label: string;
-  tag?: "p" | "span" | "h1" | "h2" | "h3" | "label";
+  tag?: 'p' | 'span' | 'h1' | 'h2' | 'h3' | 'label';
   href?: string;
   lineHeight?: number;
   fontSize?: number;
@@ -27,12 +28,12 @@ export const Typography = (props: TypographyProps) => {
     label,
     htmlFor,
     href,
-    tag = "p",
+    tag = 'p',
     lineHeight = 1.4,
     fontSize = 20,
     fontWeight = 400,
-    color = "#000",
-    backgroundColor = "transparent",
+    color = theme.colors.black,
+    backgroundColor = theme.colors.transparent,
     borderRadius = 0,
     paddingTop = 0,
     paddingBottom = 0,
@@ -41,7 +42,7 @@ export const Typography = (props: TypographyProps) => {
     isEmail = false,
     isPhone = false,
     isUnderlined = false,
-    underlineHeight = 2,
+    underlineHeight = 2
   } = props;
 
   const sharedProps = useMemo(
@@ -57,7 +58,7 @@ export const Typography = (props: TypographyProps) => {
       $paddingLeft: paddingLeft,
       $paddingRight: paddingRight,
       $isUnderlined: isUnderlined,
-      $underlineHeight: underlineHeight,
+      $underlineHeight: underlineHeight
     }),
     [
       backgroundColor,
@@ -71,7 +72,7 @@ export const Typography = (props: TypographyProps) => {
       paddingRight,
       paddingTop,
       isUnderlined,
-      underlineHeight,
+      underlineHeight
     ]
   );
 
@@ -102,17 +103,17 @@ export const Typography = (props: TypographyProps) => {
   }
 
   switch (tag) {
-    case "p":
+    case 'p':
       return <StyledP {...sharedProps}>{label}</StyledP>;
-    case "span":
+    case 'span':
       return <StyledSpan {...sharedProps}>{label}</StyledSpan>;
-    case "h1":
+    case 'h1':
       return <StyledH1 {...sharedProps}>{label}</StyledH1>;
-    case "h2":
+    case 'h2':
       return <StyledH2 {...sharedProps}>{label}</StyledH2>;
-    case "h3":
+    case 'h3':
       return <StyledH3 {...sharedProps}>{label}</StyledH3>;
-    case "label":
+    case 'label':
       return (
         <StyledLabel {...sharedProps} htmlFor={htmlFor}>
           {label}

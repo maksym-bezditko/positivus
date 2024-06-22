@@ -21,6 +21,7 @@ Positivus is a digital marketing agency that helps businesses grow and succeed o
 <summary>Expand to see the UI</summary>
 
 ![image](https://github.com/maksym-bezditko/positivus/assets/130133118/ee6a621e-10f9-4cc5-b8d8-0651dda3387a)
+
 </details>
 
 ## About
@@ -67,7 +68,7 @@ This will start the development server and you can view the project at `http://l
 
 ## Inspiration
 
-This project is inspired by the [Positivus Landing Page Design](https://www.figma.com/design/LWGadn1gJdKKqoqJI1pyEH/Positivus-Landing-Page-Design-(Community)?node-id=330-762&t=oMZF1syIfryT1C8R-0) on Figma.
+This project is inspired by the [Positivus Landing Page Design](<https://www.figma.com/design/LWGadn1gJdKKqoqJI1pyEH/Positivus-Landing-Page-Design-(Community)?node-id=330-762&t=oMZF1syIfryT1C8R-0>) on Figma.
 
 ## License
 

@@ -1,10 +1,11 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+import { theme } from '../theme/theme';
 
 type ButtonProps = {
   label: string;
   width?: string;
   marginTop?: string;
-  type?: "button" | "submit" | "reset";
+  type?: 'button' | 'submit' | 'reset';
   borderColor?: string;
   color?: string;
   backgroundColor?: string;
@@ -17,16 +18,16 @@ type ButtonProps = {
 export const Button = (props: ButtonProps) => {
   const {
     label,
-    width = "auto",
-    marginTop = "0px",
-    type = "button",
-    borderColor = "#000",
-    backgroundColor = "#fff",
-    color = "#000",
-    hoverBackgroundColor = "#000",
-    hoverColor = "#fff",
-    hoverBorderColor = "#000",
-    withBorder = true,
+    width = 'auto',
+    marginTop = '0px',
+    type = 'button',
+    borderColor = theme.colors.black,
+    backgroundColor = theme.colors.white,
+    color = theme.colors.black,
+    hoverBackgroundColor = theme.colors.black,
+    hoverColor = theme.colors.white,
+    hoverBorderColor = theme.colors.black,
+    withBorder = true
   } = props;
 
   return (
@@ -70,13 +71,13 @@ const StyledButton = styled.button<{
   margin-top: ${(props) => props.$marginTop};
   cursor: pointer;
 
-  ${(props) => !props.$withBorder && "border: none;"}
+  ${(props) => !props.$withBorder && 'border: none;'}
 
   &:hover {
     background-color: ${(props) => props.$hoverBackgroundColor};
     color: ${(props) => props.$hoverColor};
     border-color: ${(props) => props.$hoverBorderColor};
 
-    ${(props) => !props.$withBorder && "border: none;"}
+    ${(props) => !props.$withBorder && 'border: none;'}
   }
 `;

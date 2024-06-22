@@ -1,21 +1,22 @@
-import { motion } from "framer-motion";
-import styled from "styled-components";
+import { motion } from 'framer-motion';
+import styled from 'styled-components';
+import { theme } from '../theme/theme';
 
 const NAVIGATION_OPTIONS = [
-  "About us",
-  "Services",
-  "Use Cases",
-  "Pricing",
-  "Blog",
+  'About us',
+  'Services',
+  'Use Cases',
+  'Pricing',
+  'Blog'
 ];
 
 const UNDERLINE_VARIANTS = {
   hover: {
-    width: "100%",
+    width: '100%'
   },
   rest: {
-    width: 0,
-  },
+    width: 0
+  }
 };
 
 type NavigationItemsProps = {
@@ -30,13 +31,13 @@ export const NavigationItems = (props: NavigationItemsProps) => {
   const {
     isAnimated,
     isUnderlined,
-    color = "#000",
+    color = theme.colors.black,
     fontSize = 20,
-    underlineHeight = 2,
+    underlineHeight = 2
   } = props;
 
   const animationProps = isAnimated
-    ? { initial: "rest", whileInView: "hover", whileHover: "rest" }
+    ? { initial: 'rest', whileInView: 'hover', whileHover: 'rest' }
     : {};
 
   return (
@@ -61,11 +62,11 @@ export const NavigationItems = (props: NavigationItemsProps) => {
 };
 
 const StyledNavigationOptionsWrapper = styled.div`
-	display: grid;
-	grid-auto-flow: column;
-	align-items: center;
-	justify-content: space-between;
-	grid-column-gap: 40px;
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: space-between;
+  grid-column-gap: 40px;
 `;
 
 const StyledNavigationOptionWrapper = styled(motion.div)``;

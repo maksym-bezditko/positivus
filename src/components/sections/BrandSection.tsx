@@ -1,48 +1,46 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import Amazon from "../../assets/companies/amazon.png";
-import Dribbble from "../../assets/companies/dribbble.png";
-import HubSpot from "../../assets/companies/hubspot.png";
-import Notion from "../../assets/companies/notion.png";
-import Netflix from "../../assets/companies/netflix.png";
-import Zoom from "../../assets/companies/zoom.png";
+import { AmazonLogo } from '../svg/companies/AmazonLogo.tsx';
+import { DribbbleLogo } from '../svg/companies/DribbbleLogo.tsx';
+import { HubspotLogo } from '../svg/companies/HubspotLogo.tsx';
+import { NotionLogo } from '../svg/companies/NotionLogo.tsx';
+import { NetflixLogo } from '../svg/companies/NetflixLogo.tsx';
+import { ZoomLogo } from '../svg/companies/ZoomLogo.tsx';
 
 const COMPANIES = [
   {
-    name: "Amazon",
-    logo: Amazon,
+    name: 'Amazon',
+    logo: <AmazonLogo />
   },
   {
-    name: "Dribbble",
-    logo: Dribbble,
+    name: 'Dribbble',
+    logo: <DribbbleLogo />
   },
   {
-    name: "HubSpot",
-    logo: HubSpot,
+    name: 'HubSpot',
+    logo: <HubspotLogo />
   },
   {
-    name: "Notion",
-    logo: Notion,
+    name: 'Notion',
+    logo: <NotionLogo />
   },
   {
-    name: "Netflix",
-    logo: Netflix,
+    name: 'Netflix',
+    logo: <NetflixLogo />
   },
   {
-    name: "Zoom",
-    logo: Zoom,
-  },
+    name: 'Zoom',
+    logo: <ZoomLogo />
+  }
 ];
 
 export const BrandSection = () => {
   return (
     <StyledBrandsWrapper>
       {COMPANIES.map((company) => (
-        <StyledBrandsLogo
-          key={company.name}
-          src={company.logo}
-          alt={company.name}
-        />
+        <StyledBrandsLogoWrapper key={company.name}>
+          {company.logo}
+        </StyledBrandsLogoWrapper>
       ))}
     </StyledBrandsWrapper>
   );
@@ -54,6 +52,6 @@ const StyledBrandsWrapper = styled.section`
   justify-content: space-between;
 `;
 
-const StyledBrandsLogo = styled.img`
+const StyledBrandsLogoWrapper = styled.div`
   height: 48px;
 `;

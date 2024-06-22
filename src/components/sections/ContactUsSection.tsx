@@ -1,5 +1,5 @@
-import { ContactUsForm } from "../ContactUsForm";
-import { Section } from "../Section";
+import { ContactUsForm } from '../ContactUsForm';
+import { Section } from '../Section';
 
 export const ContactUsSection = () => {
   return (
@@ -7,7 +7,7 @@ export const ContactUsSection = () => {
       title="Contact Us"
       description="Connect with Us: Let's Discuss Your Digital Marketing Needs"
     >
-			<ContactUsForm />
-		</Section>
+      <ContactUsForm />
+    </Section>
   );
 };

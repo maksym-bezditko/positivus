@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import { Typography } from "./Typography";
-import { LinkedInIcon } from "./icons/LinkedInTeamMemberIcon";
-import type { TeamMember as TeamMemberType } from "../types";
+import styled from 'styled-components';
+import { Typography } from './Typography';
+import { LinkedInIcon } from './svg/LinkedInTeamMemberIcon';
+import type { TeamMember as TeamMemberType } from '../types';
 
 type TeamMemberProps = TeamMemberType;
 
@@ -37,8 +37,8 @@ const StyledTeamMember = styled.div`
   display: grid;
   grid-template-rows: 1fr 1fr;
 
-  border: 1px solid #000;
-  box-shadow: 0px 4px 0px #000;
+  border: 1px solid ${({ theme }) => theme.colors.black};
+  box-shadow: 0px 4px 0px ${({ theme }) => theme.colors.black};
   max-height: 350px;
   border-radius: 45px;
   padding: 20px 35px;
@@ -60,11 +60,11 @@ const StyledBottomPartWrapper = styled.div`
   padding: 20px 0;
 
   &::before {
-    content: "";
+    content: '';
     display: block;
     width: 100%;
     height: 1px;
-    background-color: #000;
+    background-color: ${({ theme }) => theme.colors.black};
     position: relative;
     top: -20.5px;
   }

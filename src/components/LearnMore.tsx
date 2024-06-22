@@ -1,24 +1,25 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import { LearnMoreIcon, type LearnMoreIconProps } from "./icons/LearnMoreIcon";
-import { Typography } from "./Typography";
+import { LearnMoreIcon, type LearnMoreIconProps } from './svg/LearnMoreIcon';
+import { Typography } from './Typography';
+import { theme } from '../theme/theme';
 
 type LearnMoreProps = {
-  iconVariant: LearnMoreIconProps["variant"];
+  iconVariant: LearnMoreIconProps['variant'];
   typographyColor?: string;
-  arrowPosition?: "left" | "right";
+  arrowPosition?: 'left' | 'right';
 };
 
 const mapVariantToTypographyColor = (
-  iconVariant: LearnMoreIconProps["variant"]
+  iconVariant: LearnMoreIconProps['variant']
 ) => {
   switch (iconVariant) {
-    case "sepia":
-      return "#fff";
-    case "green":
-      return "#b9ff66";
+    case 'sepia':
+      return theme.colors.white;
+    case 'green':
+      return theme.colors.green;
     default:
-      return "#000";
+      return theme.colors.black;
   }
 };
 
@@ -26,16 +27,16 @@ export const LearnMore = (props: LearnMoreProps) => {
   const {
     iconVariant,
     typographyColor = mapVariantToTypographyColor(iconVariant),
-    arrowPosition = "left",
+    arrowPosition = 'left'
   } = props;
 
   return (
     <StyledLearnMoreWrapper>
-      {arrowPosition === "left" && <LearnMoreIcon variant={iconVariant} />}
+      {arrowPosition === 'left' && <LearnMoreIcon variant={iconVariant} />}
 
       <Typography label="Learn more" color={typographyColor} />
 
-      {arrowPosition === "right" && <LearnMoreIcon variant={iconVariant} />}
+      {arrowPosition === 'right' && <LearnMoreIcon variant={iconVariant} />}
     </StyledLearnMoreWrapper>
   );
 };

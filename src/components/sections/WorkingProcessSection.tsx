@@ -1,45 +1,45 @@
-import styled from "styled-components";
-import type { WorkingProcessCard as WorkingProcessCardType } from "../../types";
-import { WorkingProcessCard } from "../WorkingProcessCard";
-import { Section } from "../Section";
+import styled from 'styled-components';
+import type { WorkingProcessCard as WorkingProcessCardType } from '../../types';
+import { WorkingProcessCard } from '../WorkingProcessCard';
+import { Section } from '../Section';
 
 const WORKING_PROCESSES: WorkingProcessCardType[] = [
   {
-    index: "01",
-    title: "Consultation",
+    index: '01',
+    title: 'Consultation',
     description:
-      "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.",
+      'During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.'
   },
   {
-    index: "02",
-    title: "Research and Strategy Development",
+    index: '02',
+    title: 'Research and Strategy Development',
     description:
-      "We conduct thorough research and analysis to understand the market landscape and develop a comprehensive strategy tailored to your business objectives. This includes competitor analysis, market trends, and identifying key opportunities for growth.",
+      'We conduct thorough research and analysis to understand the market landscape and develop a comprehensive strategy tailored to your business objectives. This includes competitor analysis, market trends, and identifying key opportunities for growth.'
   },
   {
-    index: "03",
-    title: "Implementation",
+    index: '03',
+    title: 'Implementation',
     description:
-      "In the implementation phase, we execute the strategies developed in the previous stages. Our team works diligently to ensure all aspects of the plan are carried out efficiently, including setting up campaigns, developing content, and integrating necessary tools and technologies.",
+      'In the implementation phase, we execute the strategies developed in the previous stages. Our team works diligently to ensure all aspects of the plan are carried out efficiently, including setting up campaigns, developing content, and integrating necessary tools and technologies.'
   },
   {
-    index: "04",
-    title: "Monitoring and Optimization",
+    index: '04',
+    title: 'Monitoring and Optimization',
     description:
-      "Once the strategies are implemented, we continuously monitor the performance of all initiatives. We use advanced analytics tools to track key metrics and make data-driven adjustments to optimize results and ensure we are meeting your business goals.",
+      'Once the strategies are implemented, we continuously monitor the performance of all initiatives. We use advanced analytics tools to track key metrics and make data-driven adjustments to optimize results and ensure we are meeting your business goals.'
   },
   {
-    index: "05",
-    title: "Reporting and Communication",
+    index: '05',
+    title: 'Reporting and Communication',
     description:
-      "We provide regular reports to keep you informed about the progress and performance of our efforts. Our transparent communication ensures you are always up-to-date with the latest developments and can make informed decisions based on our insights and recommendations.",
+      'We provide regular reports to keep you informed about the progress and performance of our efforts. Our transparent communication ensures you are always up-to-date with the latest developments and can make informed decisions based on our insights and recommendations.'
   },
   {
-    index: "06",
-    title: "Continual Improvement",
+    index: '06',
+    title: 'Continual Improvement',
     description:
-      "Our commitment to excellence means we never stop looking for ways to improve. We continually assess our strategies and processes, seeking feedback and staying abreast of industry trends to ensure we deliver the best possible outcomes for your business.",
-  },
+      'Our commitment to excellence means we never stop looking for ways to improve. We continually assess our strategies and processes, seeking feedback and staying abreast of industry trends to ensure we deliver the best possible outcomes for your business.'
+  }
 ];
 
 export const WorkingProcessSection = () => {

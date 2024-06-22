@@ -1,9 +1,9 @@
 type LeftArrowIconProps = {
-	isFilled?: boolean;
-}
+  isFilled?: boolean;
+};
 
 export const LeftArrowIcon = (props: LeftArrowIconProps) => {
-	const { isFilled } = props;
+  const { isFilled } = props;
 
   return (
     <svg

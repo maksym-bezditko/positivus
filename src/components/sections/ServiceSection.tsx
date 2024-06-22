@@ -1,58 +1,59 @@
-import styled from "styled-components";
-import { Service } from "../../types";
-import { ServiceCard } from "../ServiceCard";
-import { Section } from "../Section";
+import styled from 'styled-components';
+import { Service } from '../../types';
+import { ServiceCard } from '../ServiceCard';
+import { Section } from '../Section';
 
-import Ads from "../../assets/services/ads.png";
-import Analytics from "../../assets/services/analytics.png";
-import Content from "../../assets/services/content.png";
-import Email from "../../assets/services/email.png";
-import Seo from "../../assets/services/seo.png";
-import Smm from "../../assets/services/smm.png";
+import Ads from '../../assets/services/ads.png';
+import Analytics from '../../assets/services/analytics.png';
+import Content from '../../assets/services/content.png';
+import Email from '../../assets/services/email.png';
+import Seo from '../../assets/services/seo.png';
+import Smm from '../../assets/services/smm.png';
+import { theme } from '../../theme/theme';
 
 const SERVICES: Service[] = [
   {
-    title: "Search engine optimization",
-    backgroundColor: "#F3F3F3",
+    title: 'Search engine optimization',
+    backgroundColor: theme.colors.lightGrey,
     imageSrc: Seo,
-    learnMoreVariant: "default",
-    typographyBackgroundColor: "#B9FF66",
+    learnMoreVariant: 'default',
+    typographyBackgroundColor: theme.colors.green
   },
   {
-    title: "Pay-per-click advertising",
-    backgroundColor: "#B9FF66",
+    title: 'Pay-per-click advertising',
+    backgroundColor: theme.colors.green,
     imageSrc: Ads,
-    learnMoreVariant: "default",
-    typographyBackgroundColor: "#F3F3F3",
+    learnMoreVariant: 'default',
+    typographyBackgroundColor: theme.colors.lightGrey
   },
   {
-    title: "Social Media Marketing",
-    backgroundColor: "#191A23",
+    title: 'Social Media Marketing',
+    backgroundColor: theme.colors.dark,
     imageSrc: Smm,
-    learnMoreVariant: "sepia",
-    typographyBackgroundColor: "#fff",
+    learnMoreVariant: 'sepia',
+    typographyBackgroundColor: theme.colors.white
   },
   {
-    title: "Email marketing",
-    backgroundColor: "#F3F3F3",
+    title: 'Email marketing',
+    backgroundColor: theme.colors.lightGrey,
     imageSrc: Email,
-    learnMoreVariant: "default",
-    typographyBackgroundColor: "#B9FF66",
+    learnMoreVariant: 'default',
+    typographyBackgroundColor: theme.colors.green
   },
   {
-    title: "Content Creation",
-    backgroundColor: "#B9FF66",
+    title: 'Content Creation',
+    backgroundColor: theme.colors.green,
     imageSrc: Content,
-    learnMoreVariant: "default",
-    typographyBackgroundColor: "#F3F3F3",
+    learnMoreVariant: 'default',
+    typographyBackgroundColor: theme.colors.lightGrey
   },
   {
-    title: "Analytics and Tracking",
-    backgroundColor: "#191A23",
+    title: 'Analytics and Tracking',
+    backgroundColor: theme.colors.dark,
     imageSrc: Analytics,
-    learnMoreVariant: "sepia",
-    typographyBackgroundColor: "#fff",
-  },
+    learnMoreVariant: 'sepia',
+    typographyBackgroundColor: theme.colors.white
+  }
 ];
 
 export const ServiceSection = () => {

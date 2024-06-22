@@ -1,6 +1,7 @@
-import { PropsWithChildren } from "react";
-import styled from "styled-components";
-import { Typography } from "./Typography";
+import { PropsWithChildren } from 'react';
+import styled from 'styled-components';
+import { Typography } from './Typography';
+import { theme } from '../theme/theme';
 
 type SectionProps = PropsWithChildren<{
   title?: string;
@@ -8,7 +9,7 @@ type SectionProps = PropsWithChildren<{
 }>;
 
 export const Section = (props: SectionProps) => {
-  const { children, description = "", title = "" } = props;
+  const { children, description = '', title = '' } = props;
 
   return (
     <StyledSectionWrapper>
@@ -17,7 +18,7 @@ export const Section = (props: SectionProps) => {
           {title && (
             <Typography
               label={title}
-              backgroundColor="#b9ff66"
+              backgroundColor={theme.colors.green}
               fontSize={40}
               fontWeight={500}
               borderRadius={7}

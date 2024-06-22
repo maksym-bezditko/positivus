@@ -1,9 +1,9 @@
-import styled from "styled-components";
-import { Typography } from "./Typography";
-import { useState } from "react";
-import { MinusIcon } from "./icons/MinusIcon";
-import { PlusIcon } from "./icons/PlusIcon";
-import type { WorkingProcessCard as WorkingProcessCardType } from "../types";
+import styled from 'styled-components';
+import { Typography } from './Typography';
+import { useState } from 'react';
+import { MinusIcon } from './svg/MinusIcon';
+import { PlusIcon } from './svg/PlusIcon';
+import type { WorkingProcessCard as WorkingProcessCardType } from '../types';
 
 export type WorkingProcessCardProps = WorkingProcessCardType;
 
@@ -41,10 +41,11 @@ const StyledWorkingProcessCard = styled.div<{
   $isExpanded: boolean;
 }>`
   min-height: 160px;
-  background-color: ${(props) => (props.$isExpanded ? "#b9ff66" : "#f3f3f3")};
-  border: 1px solid #000;
+  background-color: ${({ $isExpanded, theme }) =>
+    $isExpanded ? theme.colors.green : theme.colors.lightGrey};
+  border: 1px solid ${({ theme }) => theme.colors.black};
   border-radius: 45px;
-  box-shadow: 0px 4px 0px #000;
+  box-shadow: 0px 4px 0px ${({ theme }) => theme.colors.black};
   padding: 40px 60px;
   margin-bottom: 5px;
 
@@ -65,8 +66,8 @@ const StyledExpandButton = styled.button`
   width: 58px;
   height: 58px;
   border-radius: 50%;
-  border: 1px solid #000;
-  background-color: #f3f3f3;
+  border: 1px solid ${({ theme }) => theme.colors.black};
+  background-color: ${({ theme }) => theme.colors.lightGrey};
   cursor: pointer;
 `;
 
@@ -79,6 +80,6 @@ const StyledTypographyWrapper = styled.div`
 
 const StyledHr = styled.hr`
   border: 0;
-  border-top: 1px solid #000;
+  border-top: 1px solid ${({ theme }) => theme.colors.black};
   margin: 30px 0;
 `;

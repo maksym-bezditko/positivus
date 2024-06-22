@@ -1,12 +1,13 @@
-import styled from "styled-components";
-import { Typography } from "./Typography";
-import { LearnMore } from "./LearnMore";
-import { LearnMoreIconProps } from "./icons/LearnMoreIcon";
+import styled from 'styled-components';
+import { Typography } from './Typography';
+import { LearnMore } from './LearnMore';
+import { LearnMoreIconProps } from './svg/LearnMoreIcon';
+import { theme } from '../theme/theme';
 
 type ServiceCardProps = {
   serviceText: string;
   serviceTextBackgroundColor: string;
-  learnMoreVariant: LearnMoreIconProps["variant"];
+  learnMoreVariant: LearnMoreIconProps['variant'];
   imageSrc: string;
   backgroundColor?: string;
 };
@@ -17,7 +18,7 @@ export const ServiceCard = (props: ServiceCardProps) => {
     serviceTextBackgroundColor,
     learnMoreVariant,
     imageSrc,
-    backgroundColor = "#F3F3F3",
+    backgroundColor = theme.colors.lightGrey
   } = props;
 
   return (
@@ -53,8 +54,8 @@ const StyledServiceCardWrapper = styled.div<{
   background-color: ${(props) => props.$backgroundColor};
   border-radius: 45px;
   min-height: 310px;
-  border: 1px solid #000;
-  box-shadow: 0px 4px 0px #000;
+  border: 1px solid ${({ theme }) => theme.colors.black};
+  box-shadow: 0px 4px 0px ${({ theme }) => theme.colors.black};
   margin-bottom: 5px;
 `;
 

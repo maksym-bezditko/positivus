@@ -1,3 +1,5 @@
+import { theme } from '../../theme/theme';
+
 type PaginationStarIconProps = {
   isFilled?: boolean;
 };
@@ -15,7 +17,7 @@ export const PaginationStarIcon = (props: PaginationStarIconProps) => {
     >
       <path
         d="M7.0099 2.05941L14 0L11.9604 7.0099L14 14L7.0099 11.9604L0 14L2.05941 7.0099L0 0L7.0099 2.05941Z"
-        fill={isFilled ? "#B9FF66" : "white"}
+        fill={isFilled ? theme.colors.green : theme.colors.white}
       />
     </svg>
   );

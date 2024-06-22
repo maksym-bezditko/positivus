@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { Slider } from "../Slider";
-import { Section } from "../Section";
+import styled from 'styled-components';
+import { Slider } from '../Slider';
+import { Section } from '../Section';
 
 export const TestimonialsSection = () => {
   return (

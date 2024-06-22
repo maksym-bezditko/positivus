@@ -1,5 +1,7 @@
-import "styled-components";
+import 'styled-components';
 
-declare module "styled-components" {
-  export interface DefaultTheme {}
+import { CustomTheme } from '../theme/theme';
+
+declare module 'styled-components' {
+  export interface DefaultTheme extends CustomTheme {}
 }

@@ -1,10 +1,11 @@
-import { useState } from "react";
-import styled from "styled-components";
-import { FormInput } from "./FormInput";
-import { Button } from "./Button";
+import { useState } from 'react';
+import styled from 'styled-components';
+import { FormInput } from './FormInput';
+import { Button } from './Button';
 
-import ContactFormDecoration from "../assets/contact-form-decor.png";
-import { Typography } from "./Typography";
+import { Typography } from './Typography';
+import { theme } from '../theme/theme';
+import { ContactFormDecor } from './svg/ContactFormDecor';
 
 export const ContactUsForm = () => {
   const [isSayHi, setIsSayHi] = useState(true);
@@ -53,15 +54,15 @@ export const ContactUsForm = () => {
           label="Send Message"
           marginTop="15px"
           type="submit"
-          backgroundColor="#000"
-          hoverBackgroundColor="#fff"
-          color="#fff"
-          hoverColor="#000"
+          backgroundColor={theme.colors.black}
+          hoverBackgroundColor={theme.colors.white}
+          color={theme.colors.white}
+          hoverColor={theme.colors.black}
         />
       </StyledForm>
 
       <StyledDecorationWrapper>
-        <StyledImage src={ContactFormDecoration} />
+        <ContactFormDecor />
       </StyledDecorationWrapper>
     </StyledFormWrapper>
   );
@@ -71,7 +72,7 @@ const StyledFormWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
 
-  background-color: #f3f3f3;
+  background-color: ${({ theme }) => theme.colors.lightGrey};
   padding: 60px 100px;
   border-radius: 45px;
   position: relative;
@@ -117,10 +118,10 @@ const StyledInput = styled.input`
   appearance: none;
   cursor: pointer;
   outline: none;
-  background-color: white;
+  background-color: ${({ theme }) => theme.colors.white};
 
   &:checked::before {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     top: 50%;
@@ -128,11 +129,7 @@ const StyledInput = styled.input`
     transform: translate(-50%, -50%);
     width: 16px;
     height: 16px;
-    background-color: #b9ff66;
+    background-color: ${({ theme }) => theme.colors.green};
     border-radius: 50%;
   }
-`;
-
-const StyledImage = styled.img`
-  width: 100%;
 `;

@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import { HeaderLogo } from "./icons/HeaderLogo";
-import { Button } from "./Button";
-import { IconWrapper } from "./IconWrapper";
-import { NavigationItems } from "./NavigationItems";
+import styled from 'styled-components';
+import { HeaderLogo } from './svg/HeaderLogo';
+import { Button } from './Button';
+import { IconWrapper } from './IconWrapper';
+import { NavigationItems } from './NavigationItems';
 
 export const Header = () => {
   return (

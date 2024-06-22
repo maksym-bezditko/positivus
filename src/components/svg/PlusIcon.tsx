@@ -1,3 +1,5 @@
+import { theme } from '../../theme/theme';
+
 export const PlusIcon = () => {
   return (
     <svg
@@ -9,7 +11,7 @@ export const PlusIcon = () => {
     >
       <path
         d="M9.6 25.58V15.86H0V10.22H9.6V0.5H15.48V10.22H25.08V15.86H15.48V25.58H9.6Z"
-        fill="#191A23"
+        fill={theme.colors.dark}
       />
     </svg>
   );

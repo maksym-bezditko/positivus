@@ -1,13 +1,14 @@
-import styled from "styled-components";
-import { Section } from "../Section";
-import { FooterLogo } from "../icons/FooterLogo";
-import { NavigationItems } from "../NavigationItems";
-import { LinkedInIcon } from "../icons/social-media-icons/LinkedInIcon";
-import { FacebookIcon } from "../icons/social-media-icons/FacebookIcon";
-import { TwitterIcon } from "../icons/social-media-icons/TwitterIcon";
-import { Typography } from "../Typography";
-import { FormInput } from "../FormInput";
-import { Button } from "../Button";
+import styled from 'styled-components';
+import { Section } from '../Section';
+import { FooterLogo } from '../svg/FooterLogo';
+import { NavigationItems } from '../NavigationItems';
+import { LinkedInIcon } from '../svg/social-media-icons/LinkedInIcon';
+import { FacebookIcon } from '../svg/social-media-icons/FacebookIcon';
+import { TwitterIcon } from '../svg/social-media-icons/TwitterIcon';
+import { Typography } from '../Typography';
+import { FormInput } from '../FormInput';
+import { Button } from '../Button';
+import { theme } from '../../theme/theme';
 
 export const FooterSection = () => {
   return (
@@ -19,7 +20,7 @@ export const FooterSection = () => {
           <NavigationItems
             isAnimated
             isUnderlined
-            color="#fff"
+            color={theme.colors.white}
             fontSize={18}
             underlineHeight={1}
           />
@@ -37,7 +38,7 @@ export const FooterSection = () => {
           <StyledContactUsWrapper>
             <Typography
               label="Contact Us:"
-              backgroundColor="#b9ff66"
+              backgroundColor={theme.colors.green}
               lineHeight={28 / 20}
               fontSize={20}
               borderRadius={7}
@@ -47,21 +48,21 @@ export const FooterSection = () => {
 
             <Typography
               label="info@positivus.com"
-              color="#fff"
+              color={theme.colors.white}
               fontSize={18}
               isEmail
             />
 
             <Typography
               label="555-567-8901"
-              color="#fff"
+              color={theme.colors.white}
               fontSize={18}
               isPhone
             />
 
             <Typography
               label="Address: 1234 Main St Moonstone City, Stardust State 12345"
-              color="#fff"
+              color={theme.colors.white}
               fontSize={18}
             />
           </StyledContactUsWrapper>
@@ -72,18 +73,19 @@ export const FooterSection = () => {
               label="Email"
               withLabel={false}
               backgroundColor="transparent"
-              color="#fff"
-              borderColor="#fff"
+              color={theme.colors.white}
+              borderColor={theme.colors.white}
               height="100%"
             />
 
             <Button
               label="Subscribe to news"
-              backgroundColor="#b9ff66"
-              hoverBackgroundColor="#000"
-              color="#000"
-              hoverColor="#fff"
-              withBorder={false}
+              backgroundColor={theme.colors.green}
+              hoverBackgroundColor={theme.colors.black}
+              color={theme.colors.black}
+              hoverColor={theme.colors.white}
+              borderColor="transparent"
+              hoverBorderColor={theme.colors.white}
               width="100%"
             />
           </StyledEmailInputWrapper>
@@ -94,13 +96,13 @@ export const FooterSection = () => {
         <StyledFooterLowerPartWrapper>
           <Typography
             label="© 2023 Positivus. All Rights Reserved."
-            color="#fff"
+            color={theme.colors.white}
           />
 
           <Typography
             label="Privacy Policy"
-            href="#"
-            color="#fff"
+            href="/"
+            color={theme.colors.white}
             isUnderlined
             underlineHeight={1}
           />
@@ -113,7 +115,7 @@ export const FooterSection = () => {
 const StyledFooterWrapper = styled.footer`
   border-top-right-radius: 45px;
   border-top-left-radius: 45px;
-  background-color: #191a23;
+  background-color: ${({ theme }) => theme.colors.dark};
   padding: 55px 60px 50px;
 `;
 
@@ -163,7 +165,7 @@ const StyledEmailInputWrapper = styled.div`
   align-items: center;
   grid-column-gap: 20px;
 
-  background-color: #292a32;
+  background-color: ${({ theme }) => theme.colors.dark};
   height: 100%;
   padding: 0 40px;
   border-radius: 15px;
@@ -171,6 +173,6 @@ const StyledEmailInputWrapper = styled.div`
 
 const StyledHr = styled.hr`
   border: 0;
-  border-top: 1px solid #fff;
+  border-top: 1px solid ${({ theme }) => theme.colors.white};
   margin: 50px 0;
 `;

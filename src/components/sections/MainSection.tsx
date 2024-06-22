@@ -1,7 +1,8 @@
-import styled from "styled-components";
-import { Button } from "../Button";
-import Megaphone from "../../assets/companies/megaphone.png";
-import { Typography } from "../Typography";
+import styled from 'styled-components';
+import { Button } from '../Button';
+import { Megaphone } from '../svg/Megaphone';
+import { Typography } from '../Typography';
+import { theme } from '../../theme/theme';
 
 export const MainSection = () => {
   return (
@@ -25,16 +26,16 @@ export const MainSection = () => {
         <StyledButtonWrapper>
           <Button
             label="Book a consultation"
-            backgroundColor="#000"
-            hoverBackgroundColor="#fff"
-            color="#fff"
-            hoverColor="#000"
+            backgroundColor={theme.colors.black}
+            hoverBackgroundColor={theme.colors.white}
+            color={theme.colors.white}
+            hoverColor={theme.colors.black}
           />
         </StyledButtonWrapper>
       </StyledTextContentWrapper>
 
       <StyledMegaphoneIllustration>
-        <StyledImage src={Megaphone} alt="Megaphone illustration" />
+        <Megaphone />
       </StyledMegaphoneIllustration>
     </StyledMainBannerWrapper>
   );
@@ -66,7 +67,3 @@ const StyledMegaphoneIllustration = styled.div`
 `;
 
 const StyledButtonWrapper = styled.div``;
-
-const StyledImage = styled.img`
-  width: 100%;
-`;
