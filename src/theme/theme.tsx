@@ -5,7 +5,6 @@ export const theme = {
     lightGrey: '#f3f3f3',
     dark: '#191a23',
     transparent: 'transparent',
-
     darkGrey: '#292A32',
     grey: '#33475b',
     lighterGrey: '#d9d9d9',
