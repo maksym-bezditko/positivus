@@ -16,9 +16,9 @@ export const WorkingProcessCard = (props: WorkingProcessCardProps) => {
     <StyledWorkingProcessCard $isExpanded={isExpanded}>
       <StyledCollapsedContentWrapper>
         <StyledTypographyWrapper>
-          <Typography fontSize={60} label={index} />
+          <Typography fontSize="xxxl" label={index} />
 
-          <Typography label={title} fontSize={30} tag="h3" />
+          <Typography label={title} fontSize="lg" tag="h3" />
         </StyledTypographyWrapper>
 
         <StyledExpandButton onClick={() => setIsExpanded(!isExpanded)}>
@@ -30,7 +30,7 @@ export const WorkingProcessCard = (props: WorkingProcessCardProps) => {
         <>
           <StyledHr />
 
-          <Typography label={description} fontSize={18} />
+          <Typography label={description} fontSize="sm" />
         </>
       )}
     </StyledWorkingProcessCard>
@@ -40,14 +40,17 @@ export const WorkingProcessCard = (props: WorkingProcessCardProps) => {
 const StyledWorkingProcessCard = styled.div<{
   $isExpanded: boolean;
 }>`
-  min-height: 160px;
+  display: grid;
+  align-items: center;
+
+  min-height: 10rem;
   background-color: ${({ $isExpanded, theme }) =>
     $isExpanded ? theme.colors.green : theme.colors.lightGrey};
   border: 1px solid ${({ theme }) => theme.colors.black};
-  border-radius: 45px;
-  box-shadow: 0px 4px 0px ${({ theme }) => theme.colors.black};
-  padding: 40px 60px;
-  margin-bottom: 5px;
+  border-radius: 2.875rem;
+  box-shadow: 0 0.25rem 0 ${({ theme }) => theme.colors.black};
+  padding: 2.5rem 3.75rem;
+  margin-bottom: 0.25rem;
 
   transition: all 0.4s ease-in-out;
 `;
@@ -63,8 +66,8 @@ const StyledExpandButton = styled.button`
   display: grid;
   place-items: center;
 
-  width: 58px;
-  height: 58px;
+  width: 3.75rem;
+  height: 3.75rem;
   border-radius: 50%;
   border: 1px solid ${({ theme }) => theme.colors.black};
   background-color: ${({ theme }) => theme.colors.lightGrey};
@@ -74,12 +77,12 @@ const StyledExpandButton = styled.button`
 const StyledTypographyWrapper = styled.div`
   display: grid;
   grid-auto-flow: column;
-  grid-column-gap: 25px;
+  grid-column-gap: 1.5rem;
   align-items: center;
 `;
 
 const StyledHr = styled.hr`
   border: 0;
   border-top: 1px solid ${({ theme }) => theme.colors.black};
-  margin: 30px 0;
+  margin: 1.875rem 0;
 `;

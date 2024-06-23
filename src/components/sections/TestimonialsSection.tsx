@@ -18,7 +18,7 @@ export const TestimonialsSection = () => {
 const StyledTestimonialsWrapper = styled.div`
   display: grid;
   grid-auto-flow: row;
-  grid-row-gap: 30px;
+  grid-row-gap: 1.875rem;
 
   overflow: hidden;
 `;

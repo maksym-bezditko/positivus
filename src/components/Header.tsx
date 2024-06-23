@@ -21,7 +21,7 @@ export const Header = () => {
 };
 
 const StyledHeader = styled.header`
-  padding: 6px 0px;
+  padding: 0.375rem 0;
 
   display: grid;
   justify-content: space-between;
@@ -34,7 +34,7 @@ const StyledNavigationOptionsWrapper = styled.nav`
   align-items: center;
 
   & > * {
-    margin-left: 40px;
-    font-size: 20px;
+    margin-left: 2.5rem;
+    font-size: ${({ theme }) => theme.fontSizes.md};
   }
 `;

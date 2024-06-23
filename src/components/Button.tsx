@@ -19,7 +19,7 @@ export const Button = (props: ButtonProps) => {
   const {
     label,
     width = 'auto',
-    marginTop = '0px',
+    marginTop = '0rem',
     type = 'button',
     borderColor = theme.colors.black,
     backgroundColor = theme.colors.white,
@@ -61,14 +61,15 @@ const StyledButton = styled.button<{
 }>`
   box-sizing: border-box;
 
-  padding: 20px 35px;
+  padding: 1.25rem 2.125rem;
   transition: all 0.3s ease-in-out;
-  border-radius: 14px;
+  border-radius: 1rem;
   border: 2px solid ${(props) => props.$borderColor};
   background-color: ${(props) => props.$backgroundColor};
   color: ${(props) => props.$color};
   width: ${(props) => props.$width};
   margin-top: ${(props) => props.$marginTop};
+  font-size: ${({ theme }) => theme.fontSizes.md};
   cursor: pointer;
 
   ${(props) => !props.$withBorder && 'border: none;'}

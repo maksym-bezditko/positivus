@@ -115,13 +115,13 @@ const StyledPaginationWrapper = styled.div`
 const StyledSliderWrapper = styled.div`
   display: grid;
   grid-auto-flow: row;
-  grid-row-gap: 120px;
+  grid-row-gap: 7.5rem;
   justify-content: center;
   align-items: end;
 
   background-color: ${({ theme }) => theme.colors.dark};
-  border-radius: 45px;
-  padding: 85px 0px 65px;
+  border-radius: 2.875rem;
+  padding: 5.25rem 0 4rem;
 
   * {
     user-select: none;
@@ -134,13 +134,13 @@ const StyledPagination = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  width: 560px;
+  width: 53.75rem;
 `;
 
 const StyledIndicatorsWrapper = styled.div`
   display: grid;
   grid-auto-flow: column;
-  grid-column-gap: 20px;
+  grid-column-gap: 1.25rem;
   align-items: center;
 `;
 
@@ -163,11 +163,11 @@ const StyledSliderOverlay = styled.div<{
 }>`
   display: grid;
   grid-auto-flow: column;
-  grid-column-gap: 50px;
+  grid-column-gap: 3rem;
 
   position: relative;
   transform: translateX(
-    calc(50% - ${({ $sliderIndex }) => $sliderIndex * 670}px)
+    calc(50% - ${({ $sliderIndex }) => $sliderIndex * 64.25}rem)
   );
   transition: all 0.4s ease-in-out;
 `;

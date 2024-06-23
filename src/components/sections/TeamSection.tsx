@@ -74,7 +74,7 @@ export const TeamSection = () => {
       <StyledButtonWrapper>
         <Button
           label="See all team"
-          width="270px"
+          width="17rem"
           backgroundColor={theme.colors.black}
           hoverBackgroundColor={theme.colors.white}
           color={theme.colors.white}
@@ -88,12 +88,12 @@ export const TeamSection = () => {
 const StyledTeamWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 35px;
+  grid-gap: 2.25rem;
 `;
 
 const StyledButtonWrapper = styled.div`
   display: grid;
   justify-content: end;
 
-  margin-top: 40px;
+  margin-top: 2.5rem;
 `;

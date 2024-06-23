@@ -16,7 +16,7 @@ export const SliderItem = (props: SliderItemProps) => {
       <StyledDescriptionWrapper>
         <Typography
           label={authorDescription}
-          fontSize={18}
+          fontSize="sm"
           color={theme.colors.white}
         />
       </StyledDescriptionWrapper>
@@ -37,34 +37,34 @@ export const SliderItem = (props: SliderItemProps) => {
 const StyledSliderItemWrapper = styled.div`
   display: grid;
   grid-auto-flow: row;
-  grid-row-gap: 50px;
+  grid-row-gap: 3rem;
   justify-content: space-between;
   align-items: center;
 
-  width: 620px;
+  width: 61.25rem;
 `;
 
 const StyledDescriptionWrapper = styled.div`
   position: relative;
   border: 2px solid ${({ theme }) => theme.colors.green};
-  border-radius: 45px;
-  padding: 48px 52px;
-  height: 240px;
+  border-radius: 2.875rem;
+  padding: 3rem 3.25rem;
+  height: 22.5rem;
 
   &:after {
     content: '';
-    width: 50px;
-    height: 50px;
+    width: 3rem;
+    height: 3rem;
     border-bottom: 2px solid ${({ theme }) => theme.colors.green};
     border-left: 2px solid ${({ theme }) => theme.colors.green};
     background-color: ${({ theme }) => theme.colors.dark};
     transform: rotate(-45deg);
     position: absolute;
-    bottom: -26.5px;
-    left: 60px;
+    bottom: -1.5rem;
+    left: 3.75rem;
   }
 `;
 
 const StyledNameAndPositionWrapper = styled.div`
-  padding: 0px 80px;
+  padding: 0 5rem;
 `;

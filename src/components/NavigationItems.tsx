@@ -66,7 +66,7 @@ const StyledNavigationOptionsWrapper = styled.div`
   grid-auto-flow: column;
   align-items: center;
   justify-content: space-between;
-  grid-column-gap: 40px;
+  grid-column-gap: 2.5rem;
 `;
 
 const StyledNavigationOptionWrapper = styled(motion.div)``;

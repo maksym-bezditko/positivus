@@ -21,7 +21,7 @@ export const CaseStudiesSection = () => {
           <StyledCaseStudy key={caseStudy}>
             <Typography
               label={caseStudy}
-              fontSize={16}
+              fontSize="xs"
               fontWeight={300}
               color={theme.colors.white}
             />
@@ -37,23 +37,23 @@ export const CaseStudiesSection = () => {
 const StyledCaseStudiesWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 120px;
+  grid-column-gap: 11.25rem;
 
-  padding: 70px 60px;
+  padding: 4.375rem 3.75rem;
   background-color: ${({ theme }) => theme.colors.dark};
-  border-radius: 45px;
-  margin-top: 80px;
+  border-radius: 2.875rem;
+  margin-top: 5rem;
 `;
 
 const StyledCaseStudy = styled.div`
   display: grid;
-  grid-row-gap: 20px;
+  grid-row-gap: 1.25rem;
   position: relative;
 
   &:not(:first-child):before {
     content: '';
     position: absolute;
-    left: -60px;
+    left: -3.75rem;
     top: 0;
     display: block;
     width: 1px;

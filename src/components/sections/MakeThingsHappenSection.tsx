@@ -11,13 +11,13 @@ export const MakeThingsHappenSection = () => {
       <StyledDetailsWrapper>
         <Typography
           label="Let's make things happen"
-          fontSize={30}
+          fontSize="lg"
           fontWeight={500}
         />
 
         <Typography
           label="Contact us today to learn more about how our digital marketing services can help your business grow and succeed online."
-          fontSize={18}
+          fontSize="md"
         />
 
         <StyledButtonWrapper>
@@ -42,19 +42,19 @@ const StyledBannerWrapper = styled.div`
   display: grid;
   grid-auto-flow: column;
   grid-template-columns: 1fr 1fr;
-  grid-column-gap: 60px;
+  grid-column-gap: 3.75rem;
   justify-content: space-between;
   align-items: center;
 
-  margin-top: 125px;
-  padding: 60px;
+  margin-top: 7.75rem;
+  padding: 3.75rem;
   background-color: ${({ theme }) => theme.colors.lightGrey};
-  border-radius: 45px;
+  border-radius: 2.875rem;
 `;
 
 const StyledDetailsWrapper = styled.div`
   *:not(:last-child) {
-    margin-bottom: 40px;
+    margin-bottom: 2.5rem;
   }
 `;
 

@@ -27,11 +27,11 @@ export const ServiceCard = (props: ServiceCardProps) => {
         <Typography
           label={serviceText}
           backgroundColor={serviceTextBackgroundColor}
-          borderRadius={7}
+          borderRadius={0.5}
           fontWeight={500}
-          fontSize={30}
-          paddingLeft={7}
-          paddingRight={7}
+          fontSize="xl"
+          paddingLeft={0.5}
+          paddingRight={0.5}
         />
 
         <LearnMore iconVariant={learnMoreVariant} />
@@ -50,13 +50,13 @@ const StyledServiceCardWrapper = styled.div<{
   display: grid;
   grid-template-columns: 1fr 1fr;
 
-  padding: 50px;
+  padding: 3rem;
   background-color: ${(props) => props.$backgroundColor};
-  border-radius: 45px;
-  min-height: 310px;
+  border-radius: 2.875rem;
+  min-height: 19.5rem;
   border: 1px solid ${({ theme }) => theme.colors.black};
-  box-shadow: 0px 4px 0px ${({ theme }) => theme.colors.black};
-  margin-bottom: 5px;
+  box-shadow: 0 0.25rem 0 ${({ theme }) => theme.colors.black};
+  margin-bottom: 0.25rem;
 `;
 
 const StyledDetailWrapper = styled.div`
@@ -72,5 +72,5 @@ const StyledImageWrapper = styled.div`
 `;
 
 const StyledImage = styled.img`
-  max-height: 170px;
+  max-height: 10.625rem;
 `;

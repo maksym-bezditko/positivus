@@ -19,16 +19,16 @@ export const Section = (props: SectionProps) => {
             <Typography
               label={title}
               backgroundColor={theme.colors.green}
-              fontSize={40}
+              fontSize="xxl"
               fontWeight={500}
-              borderRadius={7}
-              paddingLeft={7}
-              paddingRight={7}
+              borderRadius={0.5}
+              paddingLeft={0.5}
+              paddingRight={0.5}
             />
           )}
 
           {description && (
-            <Typography label={description} fontWeight={300} fontSize={18} />
+            <Typography label={description} fontWeight={300} fontSize="sm" />
           )}
         </StyledHeadingWrapper>
       )}
@@ -40,17 +40,17 @@ export const Section = (props: SectionProps) => {
 
 const StyledSectionWrapper = styled.section`
   overflow-x: hidden;
-  margin-top: 140px;
+  margin-top: 8.75rem;
 `;
 
 const StyledHeadingWrapper = styled.div`
   display: grid;
   grid-auto-flow: column;
-  grid-column-gap: 40px;
+  grid-column-gap: 2.5rem;
   align-items: center;
   justify-content: start;
 
-  max-width: 800px;
+  max-width: 50rem;
 
-  margin-bottom: 80px;
+  margin-bottom: 3rem;
 `;

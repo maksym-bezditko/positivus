@@ -52,7 +52,7 @@ export const ContactUsForm = () => {
 
         <Button
           label="Send Message"
-          marginTop="15px"
+          marginTop="1rem"
           type="submit"
           backgroundColor={theme.colors.black}
           hoverBackgroundColor={theme.colors.white}
@@ -73,8 +73,8 @@ const StyledFormWrapper = styled.div`
   grid-template-columns: 1fr 1fr;
 
   background-color: ${({ theme }) => theme.colors.lightGrey};
-  padding: 60px 100px;
-  border-radius: 45px;
+  padding: 3.75rem 6.25rem;
+  border-radius: 2.875rem;
   position: relative;
 `;
 
@@ -84,24 +84,27 @@ const StyledForm = styled.form`
 `;
 
 const StyledDecorationWrapper = styled.div`
+  display: grid;
+  align-items: center;
+
   position: absolute;
   right: -305px;
   bottom: 0;
   width: 650px;
-  height: 690px;
+  height: 100%;
 `;
 
 const StyledRadioButtonWrapper = styled.div`
   display: grid;
   grid-auto-flow: column;
-  grid-column-gap: 35px;
+  grid-column-gap: 2.25rem;
   justify-content: start;
 `;
 
 const StyledRadioButton = styled.div`
   display: grid;
   grid-auto-flow: column;
-  grid-column-gap: 15px;
+  grid-column-gap: 1rem;
   justify-content: start;
 
   * {
@@ -127,8 +130,8 @@ const StyledInput = styled.input`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 16px;
-    height: 16px;
+    width: 1rem;
+    height: 1rem;
     background-color: ${({ theme }) => theme.colors.green};
     border-radius: 50%;
   }

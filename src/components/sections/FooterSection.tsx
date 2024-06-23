@@ -39,31 +39,31 @@ export const FooterSection = () => {
             <Typography
               label="Contact Us:"
               backgroundColor={theme.colors.green}
-              lineHeight={28 / 20}
-              fontSize={20}
-              borderRadius={7}
-              paddingLeft={7}
-              paddingRight={7}
+              lineHeight={1.4}
+              fontSize="md"
+              borderRadius={0.5}
+              paddingLeft={0.5}
+              paddingRight={0.5}
             />
 
             <Typography
               label="info@positivus.com"
               color={theme.colors.white}
-              fontSize={18}
+              fontSize="sm"
               isEmail
             />
 
             <Typography
               label="555-567-8901"
               color={theme.colors.white}
-              fontSize={18}
+              fontSize="sm"
               isPhone
             />
 
             <Typography
               label="Address: 1234 Main St Moonstone City, Stardust State 12345"
               color={theme.colors.white}
-              fontSize={18}
+              fontSize="sm"
             />
           </StyledContactUsWrapper>
 
@@ -113,10 +113,10 @@ export const FooterSection = () => {
 };
 
 const StyledFooterWrapper = styled.footer`
-  border-top-right-radius: 45px;
-  border-top-left-radius: 45px;
+  border-top-right-radius: 2.875rem;
+  border-top-left-radius: 2.875rem;
   background-color: ${({ theme }) => theme.colors.dark};
-  padding: 55px 60px 50px;
+  padding: 3.5rem 3.75rem 3rem;
 `;
 
 const StyledFooterUpperPartWrapper = styled.div`
@@ -125,15 +125,15 @@ const StyledFooterUpperPartWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  margin-bottom: 66px;
+  margin-bottom: 4rem;
 `;
 
 const StyledFooterMiddlePartWrapper = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
   justify-content: space-between;
   align-items: center;
-  grid-column-gap: 40px;
+  grid-column-gap: 2.5rem;
 `;
 
 const StyledFooterLowerPartWrapper = styled.div`
@@ -141,7 +141,7 @@ const StyledFooterLowerPartWrapper = styled.div`
   grid-auto-flow: column;
   justify-content: start;
   align-items: center;
-  grid-column-gap: 40px;
+  grid-column-gap: 2.5rem;
 `;
 
 const StyledSocialMediaLinksWrapper = styled.div`
@@ -149,13 +149,13 @@ const StyledSocialMediaLinksWrapper = styled.div`
   grid-auto-flow: column;
   justify-content: space-between;
   align-items: center;
-  grid-column-gap: 20px;
+  grid-column-gap: 1.25rem;
 `;
 
 const StyledContactUsWrapper = styled.div`
   display: grid;
   justify-content: space-between;
-  grid-row-gap: 27px;
+  grid-row-gap: 1.5rem;
 `;
 
 const StyledEmailInputWrapper = styled.div`
@@ -163,16 +163,16 @@ const StyledEmailInputWrapper = styled.div`
   grid-template-columns: 1fr 1fr;
   justify-content: space-between;
   align-items: center;
-  grid-column-gap: 20px;
+  grid-column-gap: 1.125rem;
 
-  background-color: ${({ theme }) => theme.colors.dark};
+  background-color: ${({ theme }) => theme.colors.darkGrey};
   height: 100%;
-  padding: 0 40px;
-  border-radius: 15px;
+  padding: 0 2.5rem;
+  border-radius: 1rem;
 `;
 
 const StyledHr = styled.hr`
   border: 0;
   border-top: 1px solid ${({ theme }) => theme.colors.white};
-  margin: 50px 0;
+  margin: 3rem 0;
 `;

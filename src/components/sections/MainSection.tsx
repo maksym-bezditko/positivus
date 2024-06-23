@@ -10,8 +10,8 @@ export const MainSection = () => {
       <StyledTextContentWrapper>
         <Typography
           label="Navigating the digital landscape for success"
-          fontSize={60}
-          lineHeight={1.2}
+          fontSize="xxxl"
+          lineHeight={1.1}
           fontWeight={500}
         />
 
@@ -19,7 +19,7 @@ export const MainSection = () => {
           label="Our digital marketing agency helps businesses grow and succeed online
           through a range of services including SEO, PPC, social media
           marketing, and content creation."
-          fontSize={20}
+          fontSize="md"
           fontWeight={300}
         />
 
@@ -46,23 +46,23 @@ const StyledMainBannerWrapper = styled.section`
   grid-template-columns: 1fr 1fr;
   justify-content: space-between;
   align-items: start;
-  grid-column-gap: 160px;
+  grid-column-gap: 2rem;
 
   overflow-x: hidden;
-  margin: 70px 0;
+  margin: 4.375rem 0;
 `;
 
 const StyledTextContentWrapper = styled.div`
-  display: grid;
-
-  & > * {
-    margin-bottom: 40px;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 `;
 
 const StyledMegaphoneIllustration = styled.div`
   display: grid;
   justify-content: end;
+  align-items: center;
   height: 100%;
 `;
 

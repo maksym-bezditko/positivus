@@ -6,7 +6,7 @@ export const GlobalStyles = createGlobalStyle`
 		padding: 0;
 		box-sizing: border-box;
 		font-family: "Space Grotesk", sans-serif;
-		font-size: 20px;
+		font-size: ${({ theme }) => theme.fontSizes.md};
 		color: ${({ theme }) => theme.colors.black};
 	}
 `;

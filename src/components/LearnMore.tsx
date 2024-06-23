@@ -44,7 +44,7 @@ export const LearnMore = (props: LearnMoreProps) => {
 const StyledLearnMoreWrapper = styled.div`
   display: grid;
   grid-auto-flow: column;
-  grid-column-gap: 15px;
+  grid-column-gap: 1rem;
   align-items: center;
   justify-content: start;
 

@@ -41,8 +41,8 @@ const App = () => {
 };
 
 const PageWrapper = styled.div`
-  padding-top: 60px;
-  padding: 60px 100px 0;
+  padding-top: 3.75rem;
+  padding: 3.75rem 6.25rem 0;
 `;
 
 export default App;

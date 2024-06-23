@@ -18,7 +18,7 @@ export const TeamMember = (props: TeamMemberProps) => {
         <StyledNamePositionWrapper>
           <Typography label={name} fontWeight={500} />
 
-          <Typography label={position} fontSize={18} fontWeight={300} />
+          <Typography label={position} fontSize="sm" fontWeight={300} />
         </StyledNamePositionWrapper>
 
         <StyledIconWrapper>
@@ -27,7 +27,7 @@ export const TeamMember = (props: TeamMemberProps) => {
       </StyledTopPartWrapper>
 
       <StyledBottomPartWrapper>
-        <Typography label={description} fontSize={18} />
+        <Typography label={description} fontSize="sm" />
       </StyledBottomPartWrapper>
     </StyledTeamMember>
   );
@@ -38,11 +38,11 @@ const StyledTeamMember = styled.div`
   grid-template-rows: 1fr 1fr;
 
   border: 1px solid ${({ theme }) => theme.colors.black};
-  box-shadow: 0px 4px 0px ${({ theme }) => theme.colors.black};
-  max-height: 350px;
-  border-radius: 45px;
-  padding: 20px 35px;
-  margin-bottom: 4px;
+  box-shadow: 0 4px 0 ${({ theme }) => theme.colors.black};
+  max-height: 22rem;
+  border-radius: 2.875rem;
+  padding: 1.25rem 2.25rem;
+  margin-bottom: 0.25rem;
 `;
 
 const StyledTopPartWrapper = styled.div`
@@ -50,14 +50,14 @@ const StyledTopPartWrapper = styled.div`
   grid-auto-flow: column;
   justify-content: start;
   align-items: end;
-  grid-column-gap: 20px;
+  grid-column-gap: 1.25rem;
 
-  padding: 20px 0;
+  padding: 1.25rem 0;
   position: relative;
 `;
 
 const StyledBottomPartWrapper = styled.div`
-  padding: 20px 0;
+  padding: 1.25rem 0;
 
   &::before {
     content: '';
@@ -66,15 +66,15 @@ const StyledBottomPartWrapper = styled.div`
     height: 1px;
     background-color: ${({ theme }) => theme.colors.black};
     position: relative;
-    top: -20.5px;
+    top: -1.25rem;
   }
 `;
 
 const StyledImageWrapper = styled.div``;
 
 const StyledImage = styled.img`
-  width: 100px;
-  height: 100px;
+  width: 6.25rem;
+  height: 6.25rem;
 `;
 
 const StyledNamePositionWrapper = styled.div``;

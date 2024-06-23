@@ -1,13 +1,13 @@
 import { useMemo } from 'react';
 import styled, { css } from 'styled-components';
-import { theme } from '../theme/theme';
+import { CustomTheme, theme } from '../theme/theme';
 
 type TypographyProps = {
   label: string;
   tag?: 'p' | 'span' | 'h1' | 'h2' | 'h3' | 'label';
   href?: string;
   lineHeight?: number;
-  fontSize?: number;
+  fontSize?: keyof CustomTheme['fontSizes'];
   color?: string;
   fontWeight?: number;
   backgroundColor?: string;
@@ -30,7 +30,7 @@ export const Typography = (props: TypographyProps) => {
     href,
     tag = 'p',
     lineHeight = 1.4,
-    fontSize = 20,
+    fontSize = 'md',
     fontWeight = 400,
     color = theme.colors.black,
     backgroundColor = theme.colors.transparent,
@@ -47,7 +47,7 @@ export const Typography = (props: TypographyProps) => {
 
   const sharedProps = useMemo(
     () => ({
-      $fontSize: fontSize,
+      $fontSize: theme.fontSizes[fontSize],
       $fontWeight: fontWeight,
       $lineHeight: lineHeight,
       $color: color,
@@ -125,7 +125,7 @@ export const Typography = (props: TypographyProps) => {
 };
 
 type SharedTypographyProps = {
-  $fontSize: number;
+  $fontSize: string;
   $fontWeight: number;
   $lineHeight: number;
   $backgroundColor: string;
@@ -145,17 +145,17 @@ const StyledTypography = css<SharedTypographyProps>`
   width: fit-content;
   height: fit-content;
 
-  font-size: ${(props) => props.$fontSize}px;
+  font-size: ${(props) => props.$fontSize};
   font-weight: ${(props) => props.$fontWeight};
   line-height: ${(props) => props.$lineHeight};
   color: ${(props) => props.$color};
   background-color: ${(props) => props.$backgroundColor};
-  border-radius: ${(props) => props.$borderRadius}px;
+  border-radius: ${(props) => props.$borderRadius}rem;
 
-  padding-top: ${(props) => props.$paddingTop}px;
-  padding-bottom: ${(props) => props.$paddingBottom}px;
-  padding-left: ${(props) => props.$paddingLeft}px;
-  padding-right: ${(props) => props.$paddingRight}px;
+  padding-top: ${(props) => props.$paddingTop}rem;
+  padding-bottom: ${(props) => props.$paddingBottom}rem;
+  padding-left: ${(props) => props.$paddingLeft}rem;
+  padding-right: ${(props) => props.$paddingRight}rem;
 
   ${(props) =>
     props.$isUnderlined &&

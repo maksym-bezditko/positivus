@@ -50,8 +50,9 @@ const StyledBrandsWrapper = styled.section`
   display: grid;
   grid-auto-flow: column;
   justify-content: space-between;
+  align-items: center;
 `;
 
 const StyledBrandsLogoWrapper = styled.div`
-  height: 48px;
+  height: 3rem;
 `;

@@ -22,7 +22,7 @@ export const FormInput = (props: FormInputProps) => {
     borderColor = theme.colors.black,
     backgroundColor = theme.colors.white,
     color = theme.colors.black,
-    height = inputFieldType === 'textarea' ? '200px' : 'auto'
+    height = inputFieldType === 'textarea' ? '12.5rem' : 'auto'
   } = props;
 
   const sharedProps = {
@@ -37,7 +37,7 @@ export const FormInput = (props: FormInputProps) => {
       {withLabel && (
         <Typography
           label={label + (isRequired ? '*' : '')}
-          fontSize={16}
+          fontSize="xs"
           lineHeight={2}
         />
       )}
@@ -83,11 +83,11 @@ const StyledInput = styled.input<{
   color: ${({ $color }) => $color};
   background-color: ${({ $backgroundColor }) => $backgroundColor};
 
-  padding: 18px 30px;
-  border-radius: 15px;
+  padding: 1rem 1.875rem;
+  border-radius: 1rem;
   width: 100%;
   height: ${({ $height }) => $height};
-  font-size: 18px;
+  font-size: ${({ theme }) => theme.fontSizes.sm};
 
   &:focus {
     outline: none;
@@ -106,9 +106,9 @@ const StyledTextarea = styled.textarea<{
 
   width: 100%;
   height: ${({ $height }) => $height};
-  padding: 18px 30px;
-  border-radius: 15px;
-  font-size: 18px;
+  padding: 1.125rem 1.875rem;
+  border-radius: 1rem;
+  font-size: ${({ theme }) => theme.fontSizes.sm};
   resize: none;
 
   &:focus {
