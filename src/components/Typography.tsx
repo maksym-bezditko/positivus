@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import styled, { css } from 'styled-components';
-import { CustomTheme, theme } from '../theme/theme';
+import { CustomTheme, theme } from '../theme';
 
 type TypographyProps = {
   label: string;

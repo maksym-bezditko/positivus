@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
-import { theme } from '../theme/theme';
+import { theme } from '../theme';
 
 const NAVIGATION_OPTIONS = [
   'About us',

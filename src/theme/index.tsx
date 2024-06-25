@@ -23,6 +23,17 @@ export const theme = {
     xl: '2rem',
     xxl: '2.5rem',
     xxxl: '3.75rem'
+  },
+  breakpoints: {
+    xs: '0px',
+    xxs: '320px',
+    xsm: '480px',
+    sm: '576px',
+    md: '768px',
+    lg: '992px',
+    xl: '1200px',
+    xxl: '1400px',
+    xxxl: '1600px'
   }
 };
 

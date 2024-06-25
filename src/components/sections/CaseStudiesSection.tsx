@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Typography } from '../Typography';
 import { LearnMore } from '../LearnMore';
 import { Section } from '../Section';
-import { theme } from '../../theme/theme';
+import { theme } from '../../theme';
 
 const CASE_STUDIES = [
   'For a local restaurant, we implemented a targeted PPC campaign that resulted in a 50% increase in website traffic and a 25% increase in sales.',

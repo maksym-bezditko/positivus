@@ -11,13 +11,14 @@ import { TeamSection } from './components/sections/TeamSection';
 import { TestimonialsSection } from './components/sections/TestimonialsSection';
 import { ContactUsSection } from './components/sections/ContactUsSection';
 import { FooterSection } from './components/sections/FooterSection';
+import { respondTo } from './styles/mixins/respondTo';
 
 const App = () => {
   return (
     <PageWrapper>
       <Header />
 
-      <MainSection />
+      {/* <MainSection />
 
       <BrandSection />
 
@@ -35,7 +36,7 @@ const App = () => {
 
       <ContactUsSection />
 
-      <FooterSection />
+      <FooterSection /> */}
     </PageWrapper>
   );
 };
@@ -43,6 +44,10 @@ const App = () => {
 const PageWrapper = styled.div`
   padding-top: 3.75rem;
   padding: 3.75rem 6.25rem 0;
+
+  ${respondTo('lg')(`
+    padding: 3.75rem 3.75rem 0;
+  `)}
 `;
 
 export default App;

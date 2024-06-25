@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Typography } from './Typography';
 import { LearnMore } from './LearnMore';
 import { LearnMoreIconProps } from './svg/LearnMoreIcon';
-import { theme } from '../theme/theme';
+import { theme } from '../theme';
 
 type ServiceCardProps = {
   serviceText: string;

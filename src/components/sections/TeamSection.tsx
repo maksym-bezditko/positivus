@@ -11,7 +11,7 @@ import EmilyJohnson from '../../assets/team-members/emily-johnson.png';
 import BrianWilliams from '../../assets/team-members/brian-williams.png';
 import SarahKim from '../../assets/team-members/sarah-kim.png';
 import { Section } from '../Section';
-import { theme } from '../../theme/theme';
+import { theme } from '../../theme';
 
 const TEAM_MEMBERS: TeamMemberType[] = [
   {

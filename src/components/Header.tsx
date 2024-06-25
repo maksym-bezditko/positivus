@@ -3,8 +3,13 @@ import { HeaderLogo } from './svg/HeaderLogo';
 import { Button } from './Button';
 import { IconWrapper } from './IconWrapper';
 import { NavigationItems } from './NavigationItems';
+import { BurgerMenuIcon } from './svg/BurgerMenuIcon';
+import { useMediaQuery } from '../hooks/useMediaQuery';
+import { respondTo } from '../styles/mixins/respondTo';
 
 export const Header = () => {
+  const isDesktop = useMediaQuery('lg');
+
   return (
     <StyledHeader>
       <IconWrapper isCursorPointer>
@@ -12,9 +17,15 @@ export const Header = () => {
       </IconWrapper>
 
       <StyledNavigationOptionsWrapper>
-        <NavigationItems isAnimated isUnderlined />
+        {isDesktop ? (
+          <>
+            <NavigationItems isAnimated isUnderlined />
 
-        <Button label="Request a quote" />
+            <Button label="Request a quote" />
+          </>
+        ) : (
+          <BurgerMenuIcon />
+        )}
       </StyledNavigationOptionsWrapper>
     </StyledHeader>
   );
@@ -26,6 +37,12 @@ const StyledHeader = styled.header`
   display: grid;
   justify-content: space-between;
   grid-auto-flow: column;
+
+  border: 1px solid ${({ theme }) => theme.colors.black};
+
+  ${respondTo('lg')(`
+    padding: 0.125rem 0;
+  `)}
 `;
 
 const StyledNavigationOptionsWrapper = styled.nav`

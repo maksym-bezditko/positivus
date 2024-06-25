@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Typography } from '../Typography';
 import { Button } from '../Button';
 
-import { theme } from '../../theme/theme';
+import { theme } from '../../theme';
 import { MakeThingsHappenDecor } from '../svg/MakeThingsHappenDecor';
 
 export const MakeThingsHappenSection = () => {

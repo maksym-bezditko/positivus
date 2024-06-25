@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Button } from '../Button';
 import { Megaphone } from '../svg/Megaphone';
 import { Typography } from '../Typography';
-import { theme } from '../../theme/theme';
+import { theme } from '../../theme';
 
 export const MainSection = () => {
   return (

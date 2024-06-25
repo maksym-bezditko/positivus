@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { LearnMoreIcon, type LearnMoreIconProps } from './svg/LearnMoreIcon';
 import { Typography } from './Typography';
-import { theme } from '../theme/theme';
+import { theme } from '../theme';
 
 type LearnMoreProps = {
   iconVariant: LearnMoreIconProps['variant'];

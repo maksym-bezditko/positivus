@@ -9,7 +9,7 @@ import Content from '../../assets/services/content.png';
 import Email from '../../assets/services/email.png';
 import Seo from '../../assets/services/seo.png';
 import Smm from '../../assets/services/smm.png';
-import { theme } from '../../theme/theme';
+import { theme } from '../../theme';
 
 const SERVICES: Service[] = [
   {

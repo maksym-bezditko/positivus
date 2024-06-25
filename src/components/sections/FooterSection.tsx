@@ -8,7 +8,7 @@ import { TwitterIcon } from '../svg/social-media-icons/TwitterIcon';
 import { Typography } from '../Typography';
 import { FormInput } from '../FormInput';
 import { Button } from '../Button';
-import { theme } from '../../theme/theme';
+import { theme } from '../../theme';
 
 export const FooterSection = () => {
   return (

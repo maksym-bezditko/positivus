@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Typography } from './Typography';
-import { theme } from '../theme/theme';
+import { theme } from '../theme';
 
 export type SliderItemProps = {
   authorName: string;

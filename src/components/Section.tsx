@@ -1,7 +1,7 @@
 import { PropsWithChildren } from 'react';
 import styled from 'styled-components';
 import { Typography } from './Typography';
-import { theme } from '../theme/theme';
+import { theme } from '../theme';
 
 type SectionProps = PropsWithChildren<{
   title?: string;

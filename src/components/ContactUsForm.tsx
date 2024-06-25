@@ -4,7 +4,7 @@ import { FormInput } from './FormInput';
 import { Button } from './Button';
 
 import { Typography } from './Typography';
-import { theme } from '../theme/theme';
+import { theme } from '../theme';
 import { ContactFormDecor } from './svg/ContactFormDecor';
 
 export const ContactUsForm = () => {
