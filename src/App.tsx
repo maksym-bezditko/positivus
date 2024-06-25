@@ -18,7 +18,7 @@ const App = () => {
     <PageWrapper>
       <Header />
 
-      {/* <MainSection />
+      <MainSection />
 
       <BrandSection />
 
@@ -36,7 +36,7 @@ const App = () => {
 
       <ContactUsSection />
 
-      <FooterSection /> */}
+      <FooterSection />
     </PageWrapper>
   );
 };
