@@ -16,6 +16,7 @@ export const theme = {
     darkBlue: '#191a23'
   },
   fontSizes: {
+    xxs: '0.75rem',
     xs: '1rem',
     sm: '1.125rem',
     md: '1.25rem',

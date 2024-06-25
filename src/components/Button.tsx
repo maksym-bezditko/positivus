@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { theme } from '../theme';
+import { respondTo } from '../styles/mixins/respondTo';
 
 type ButtonProps = {
   label: string;
@@ -81,4 +82,10 @@ const StyledButton = styled.button<{
 
     ${(props) => !props.$withBorder && 'border: none;'}
   }
+
+  ${respondTo('xxl')(`
+    padding: 0.75rem 1.5rem;
+
+    font-size: ${theme.fontSizes.sm};
+  `)}
 `;

@@ -45,8 +45,16 @@ const PageWrapper = styled.div`
   padding-top: 3.75rem;
   padding: 3.75rem 6.25rem 0;
 
-  ${respondTo('lg')(`
-    padding: 3.75rem 3.75rem 0;
+  ${respondTo('xxl')(`
+    padding: 2rem 2rem 0;
+  `)}
+
+  ${respondTo('xl')(`
+    padding: 1rem 1rem 0;
+  `)}
+
+${respondTo('lg')(`
+    padding: 0.5rem 0.5rem 0;
   `)}
 `;
 

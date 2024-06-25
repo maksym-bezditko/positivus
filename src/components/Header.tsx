@@ -1,20 +1,28 @@
 import styled from 'styled-components';
-import { HeaderLogo } from './svg/HeaderLogo';
+import { StarIcon } from './svg/StarIcon';
 import { Button } from './Button';
-import { IconWrapper } from './IconWrapper';
 import { NavigationItems } from './NavigationItems';
 import { BurgerMenuIcon } from './svg/BurgerMenuIcon';
 import { useMediaQuery } from '../hooks/useMediaQuery';
 import { respondTo } from '../styles/mixins/respondTo';
+import { Typography } from './Typography';
+import { theme } from '../theme';
 
 export const Header = () => {
-  const isDesktop = useMediaQuery('lg');
+  const isDesktop = useMediaQuery('xl');
 
   return (
     <StyledHeader>
-      <IconWrapper isCursorPointer>
-        <HeaderLogo />
-      </IconWrapper>
+      <StyledLogoWrapper isCursorPointer>
+        <StarIcon />
+
+        <Typography
+          label="Positivus"
+          fontSize="lg"
+          fontWeight={500}
+          color={theme.colors.black}
+        />
+      </StyledLogoWrapper>
 
       <StyledNavigationOptionsWrapper>
         {isDesktop ? (
@@ -36,9 +44,8 @@ const StyledHeader = styled.header`
 
   display: grid;
   justify-content: space-between;
+  align-items: center;
   grid-auto-flow: column;
-
-  border: 1px solid ${({ theme }) => theme.colors.black};
 
   ${respondTo('lg')(`
     padding: 0.125rem 0;
@@ -54,4 +61,14 @@ const StyledNavigationOptionsWrapper = styled.nav`
     margin-left: 2.5rem;
     font-size: ${({ theme }) => theme.fontSizes.md};
   }
+`;
+
+const StyledLogoWrapper = styled.div<{ isCursorPointer?: boolean }>`
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  align-items: center;
+  grid-column-gap: 0.75rem;
+
+  cursor: ${({ isCursorPointer }) => (isCursorPointer ? 'pointer' : 'auto')};
 `;
