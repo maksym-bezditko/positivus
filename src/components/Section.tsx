@@ -64,8 +64,11 @@ const StyledHeadingWrapper = styled.div`
   justify-content: start;
 
   max-width: 50rem;
+  margin-bottom: 5rem;
 
-  margin-bottom: 3rem;
+  ${respondTo('xxl')(css`
+    margin-bottom: 3.75rem;
+  `)}
 
   ${respondTo('lg')(css`
     grid-auto-flow: row;

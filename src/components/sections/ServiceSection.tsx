@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Service } from '../../types';
 import { ServiceCard } from '../ServiceCard';
 import { Section } from '../Section';
@@ -10,6 +10,7 @@ import Email from '../../assets/services/email.png';
 import Seo from '../../assets/services/seo.png';
 import Smm from '../../assets/services/smm.png';
 import { theme } from '../../theme';
+import { respondTo } from '../../styles/mixins/respondTo';
 
 const SERVICES: Service[] = [
   {
@@ -83,5 +84,9 @@ const StyledServicesList = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-gap: 2.125rem;
 
-  margin-top: 5rem;
+  ${respondTo('xxxxl')(css`
+    grid-template-columns: none;
+    grid-auto-flow: row;
+    grid-row-gap: 2rem;
+  `)}
 `;

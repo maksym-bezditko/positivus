@@ -8,6 +8,7 @@ type LearnMoreProps = {
   iconVariant: LearnMoreIconProps['variant'];
   typographyColor?: string;
   arrowPosition?: 'left' | 'right';
+  withLabel?: boolean;
 };
 
 const mapVariantToTypographyColor = (
@@ -27,14 +28,15 @@ export const LearnMore = (props: LearnMoreProps) => {
   const {
     iconVariant,
     typographyColor = mapVariantToTypographyColor(iconVariant),
-    arrowPosition = 'left'
+    arrowPosition = 'left',
+    withLabel = true
   } = props;
 
   return (
     <StyledLearnMoreWrapper>
       {arrowPosition === 'left' && <LearnMoreIcon variant={iconVariant} />}
 
-      <Typography label="Learn more" color={typographyColor} />
+      {withLabel && <Typography label="Learn more" color={typographyColor} />}
 
       {arrowPosition === 'right' && <LearnMoreIcon variant={iconVariant} />}
     </StyledLearnMoreWrapper>

@@ -42,7 +42,6 @@ const StyledCaseStudiesWrapper = styled.div`
   padding: 4.375rem 3.75rem;
   background-color: ${({ theme }) => theme.colors.dark};
   border-radius: 2.875rem;
-  margin-top: 5rem;
 `;
 
 const StyledCaseStudy = styled.div`
