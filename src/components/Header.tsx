@@ -70,5 +70,6 @@ const StyledLogoWrapper = styled.div<{ $isCursorPointer?: boolean }>`
   align-items: center;
   grid-column-gap: 0.75rem;
 
+  
   cursor: ${({ $isCursorPointer }) => ($isCursorPointer ? 'pointer' : 'auto')};
 `;
