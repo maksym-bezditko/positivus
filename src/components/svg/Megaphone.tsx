@@ -3,10 +3,9 @@ import { theme } from '../../theme';
 export const Megaphone = () => {
   return (
     <svg
-      width="601"
-      height="515"
       viewBox="0 0 601 515"
       fill="none"
+      style={{ objectFit: 'contain', width: '100%', height: '100%' }}
       xmlns="http://www.w3.org/2000/svg"
     >
       <g clipPath="url(#clip0_332_1228)">

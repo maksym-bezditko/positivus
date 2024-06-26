@@ -21,6 +21,7 @@ type TypographyProps = {
   isPhone?: boolean;
   isUnderlined?: boolean;
   underlineHeight?: number;
+  textAlign?: 'left' | 'center' | 'right';
 };
 
 export const Typography = (props: TypographyProps) => {
@@ -42,7 +43,8 @@ export const Typography = (props: TypographyProps) => {
     isEmail = false,
     isPhone = false,
     isUnderlined = false,
-    underlineHeight = 2
+    underlineHeight = 2,
+    textAlign = 'left'
   } = props;
 
   const sharedProps = useMemo(
@@ -58,7 +60,8 @@ export const Typography = (props: TypographyProps) => {
       $paddingLeft: paddingLeft,
       $paddingRight: paddingRight,
       $isUnderlined: isUnderlined,
-      $underlineHeight: underlineHeight
+      $underlineHeight: underlineHeight,
+      $textAlign: textAlign
     }),
     [
       backgroundColor,
@@ -72,7 +75,8 @@ export const Typography = (props: TypographyProps) => {
       paddingRight,
       paddingTop,
       isUnderlined,
-      underlineHeight
+      underlineHeight,
+      textAlign
     ]
   );
 
@@ -137,6 +141,7 @@ type SharedTypographyProps = {
   $paddingRight: number;
   $isUnderlined: boolean;
   $underlineHeight: number;
+  $textAlign: TypographyProps['textAlign'];
 };
 
 const StyledTypography = css<SharedTypographyProps>`
@@ -151,6 +156,7 @@ const StyledTypography = css<SharedTypographyProps>`
   color: ${(props) => props.$color};
   background-color: ${(props) => props.$backgroundColor};
   border-radius: ${(props) => props.$borderRadius}rem;
+  text-align: ${(props) => props.$textAlign};
 
   padding-top: ${(props) => props.$paddingTop}rem;
   padding-bottom: ${(props) => props.$paddingBottom}rem;

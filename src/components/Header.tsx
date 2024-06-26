@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { StarIcon } from './svg/StarIcon';
 import { Button } from './Button';
 import { NavigationItems } from './NavigationItems';
@@ -13,7 +13,7 @@ export const Header = () => {
 
   return (
     <StyledHeader>
-      <StyledLogoWrapper isCursorPointer>
+      <StyledLogoWrapper $isCursorPointer>
         <StarIcon />
 
         <Typography
@@ -47,7 +47,7 @@ const StyledHeader = styled.header`
   align-items: center;
   grid-auto-flow: column;
 
-  ${respondTo('lg')(`
+  ${respondTo('lg')(css`
     padding: 0.125rem 0;
   `)}
 `;
@@ -63,12 +63,12 @@ const StyledNavigationOptionsWrapper = styled.nav`
   }
 `;
 
-const StyledLogoWrapper = styled.div<{ isCursorPointer?: boolean }>`
+const StyledLogoWrapper = styled.div<{ $isCursorPointer?: boolean }>`
   display: grid;
   grid-auto-flow: column;
   justify-content: start;
   align-items: center;
   grid-column-gap: 0.75rem;
 
-  cursor: ${({ isCursorPointer }) => (isCursorPointer ? 'pointer' : 'auto')};
+  cursor: ${({ $isCursorPointer }) => ($isCursorPointer ? 'pointer' : 'auto')};
 `;

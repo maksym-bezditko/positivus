@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { theme } from '../theme';
 import { respondTo } from '../styles/mixins/respondTo';
 
@@ -69,7 +69,7 @@ const StyledNavigationOptionsWrapper = styled.div`
   justify-content: space-between;
   grid-column-gap: 2.5rem;
 
-  ${respondTo('xxl')(`
+  ${respondTo('xxl')(css`
      grid-column-gap: 1rem;
   `)}
 `;
@@ -85,7 +85,7 @@ const StyledNavigationOptionAnchor = styled(motion.a)<{
   text-decoration: none;
   cursor: pointer;
 
-  ${respondTo('xxl')(`
+  ${respondTo('xxl')(css`
     font-size: ${theme.fontSizes.xs};
   `)}
 `;

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { theme } from '../theme';
 import { respondTo } from '../styles/mixins/respondTo';
 
@@ -64,7 +64,7 @@ const StyledButton = styled.button<{
 
   padding: 1.25rem 2.125rem;
   transition: all 0.3s ease-in-out;
-  border-radius: 1rem;
+  border-radius: 0.75rem;
   border: 2px solid ${(props) => props.$borderColor};
   background-color: ${(props) => props.$backgroundColor};
   color: ${(props) => props.$color};
@@ -83,7 +83,7 @@ const StyledButton = styled.button<{
     ${(props) => !props.$withBorder && 'border: none;'}
   }
 
-  ${respondTo('xxl')(`
+  ${respondTo('xxl')(css`
     padding: 0.75rem 1.5rem;
 
     font-size: ${theme.fontSizes.sm};
