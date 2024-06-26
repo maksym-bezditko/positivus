@@ -56,12 +56,6 @@ export const BrandSection = () => {
                 {company.logo}
               </StyledBrandsLogoWrapper>
             ))}
-
-            {COMPANIES.map((company) => (
-              <StyledBrandsLogoWrapper key={`${company.name}-copy`}>
-                {company.logo}
-              </StyledBrandsLogoWrapper>
-            ))}
           </StyledBrandsScroller>
         )}
       </StyledBrandsWrapper>
@@ -73,8 +67,11 @@ const scroll = keyframes`
   0% {
     transform: translateX(0);
   }
-  100% {
+  50% {
     transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
   }
 `;
 
@@ -95,8 +92,9 @@ const StyledBrandsWrapper = styled.section`
 const StyledBrandsScroller = styled.div`
   display: flex;
   column-gap: 1.5rem;
+  padding: 0 1rem;
   width: 200%;
-  animation: ${scroll} 3s linear infinite;
+  animation: ${scroll} 10s linear infinite;
 `;
 
 const StyledBrandsLogoWrapper = styled.div`
