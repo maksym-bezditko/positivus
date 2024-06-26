@@ -34,9 +34,9 @@ const App = () => {
 
       <TestimonialsSection />
 
-      <ContactUsSection />
+      {/* <ContactUsSection />
 
-      <FooterSection />
+      <FooterSection /> */}
     </PageWrapper>
   );
 };
