@@ -3,8 +3,7 @@ import { theme } from '../../theme';
 export const MakeThingsHappenDecor = () => {
   return (
     <svg
-      width="494"
-      height="395"
+      height="100%"
       viewBox="0 0 494 395"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

@@ -4,7 +4,7 @@ import { Header } from './components/Header';
 import { MainSection } from './components/sections/MainSection';
 import { ServiceSection } from './components/sections/ServiceSection';
 import { BrandSection } from './components/sections/BrandSection';
-// import { MakeThingsHappenSection } from './components/sections/MakeThingsHappenSection';
+import { MakeThingsHappenSection } from './components/sections/MakeThingsHappenSection';
 // import { CaseStudiesSection } from './components/sections/CaseStudiesSection';
 // import { WorkingProcessSection } from './components/sections/WorkingProcessSection';
 // import { TeamSection } from './components/sections/TeamSection';
@@ -25,9 +25,9 @@ const App = () => {
 
       <ServiceSection />
 
-      {/* <MakeThingsHappenSection />
+      <MakeThingsHappenSection />
 
-      <CaseStudiesSection />
+      {/* <CaseStudiesSection />
 
       <WorkingProcessSection />
 
