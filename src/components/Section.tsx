@@ -13,7 +13,7 @@ type SectionProps = PropsWithChildren<{
 export const Section = (props: SectionProps) => {
   const { children, description = '', title = '' } = props;
 
-  const isDesktop = useMediaQuery('xl');
+  const isDesktop = useMediaQuery('lg');
 
   return (
     <StyledSectionWrapper>
@@ -61,7 +61,7 @@ const StyledHeadingWrapper = styled.div`
   grid-auto-flow: column;
   grid-column-gap: 2.5rem;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
 
   max-width: 50rem;
   margin-bottom: 5rem;

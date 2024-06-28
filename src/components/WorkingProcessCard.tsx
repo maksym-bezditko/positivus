@@ -1,9 +1,11 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Typography } from './Typography';
 import { useState } from 'react';
 import { MinusIcon } from './svg/MinusIcon';
 import { PlusIcon } from './svg/PlusIcon';
 import type { WorkingProcessCard as WorkingProcessCardType } from '../types';
+import { respondTo } from '../styles/mixins/respondTo';
+import { useMediaQuery } from '../hooks/useMediaQuery';
 
 export type WorkingProcessCardProps = WorkingProcessCardType;
 
@@ -12,13 +14,15 @@ export const WorkingProcessCard = (props: WorkingProcessCardProps) => {
 
   const [isExpanded, setIsExpanded] = useState(false);
 
+  const isLG = useMediaQuery('lg');
+
   return (
     <StyledWorkingProcessCard $isExpanded={isExpanded}>
       <StyledCollapsedContentWrapper>
         <StyledTypographyWrapper>
-          <Typography fontSize="xxxl" label={index} />
+          <Typography fontSize={isLG ? 'xxxl' : 'xl'} label={index} />
 
-          <Typography label={title} fontSize="lg" tag="h3" />
+          <Typography label={title} fontSize={isLG ? 'lg' : 'sm'} tag="h3" />
         </StyledTypographyWrapper>
 
         <StyledExpandButton onClick={() => setIsExpanded(!isExpanded)}>
@@ -53,6 +57,11 @@ const StyledWorkingProcessCard = styled.div<{
   margin-bottom: 0.25rem;
 
   transition: all 0.4s ease-in-out;
+
+  ${respondTo('lg')(css`
+    padding: 1rem 1.5rem;
+    min-height: 4rem;
+  `)}
 `;
 
 const StyledCollapsedContentWrapper = styled.div`
@@ -72,6 +81,11 @@ const StyledExpandButton = styled.button`
   border: 1px solid ${({ theme }) => theme.colors.black};
   background-color: ${({ theme }) => theme.colors.lightGrey};
   cursor: pointer;
+
+  ${respondTo('lg')(css`
+    width: 2.5rem;
+    height: 2.5rem;
+  `)}
 `;
 
 const StyledTypographyWrapper = styled.div`

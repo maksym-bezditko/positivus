@@ -6,7 +6,7 @@ import { ServiceSection } from './components/sections/ServiceSection';
 import { BrandSection } from './components/sections/BrandSection';
 import { MakeThingsHappenSection } from './components/sections/MakeThingsHappenSection';
 // import { CaseStudiesSection } from './components/sections/CaseStudiesSection';
-// import { WorkingProcessSection } from './components/sections/WorkingProcessSection';
+import { WorkingProcessSection } from './components/sections/WorkingProcessSection';
 // import { TeamSection } from './components/sections/TeamSection';
 // import { TestimonialsSection } from './components/sections/TestimonialsSection';
 // import { ContactUsSection } from './components/sections/ContactUsSection';
@@ -27,19 +27,19 @@ const App = () => {
 
       <MakeThingsHappenSection />
 
-      {/* <CaseStudiesSection />
-
       <WorkingProcessSection />
 
-      <TeamSection />
+      {/* <CaseStudiesSection /> */}
 
-      <TestimonialsSection />
+      {/* <TeamSection /> */}
 
-      <ContactUsSection />
+      {/* <TestimonialsSection /> */}
 
-      <FooterSection /> */}
+      {/* <ContactUsSection /> */}
 
-      <Section></Section>
+      {/* <FooterSection /> */}
+
+      <Section />
     </PageWrapper>
   );
 };
