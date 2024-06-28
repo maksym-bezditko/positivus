@@ -20,9 +20,9 @@ export const WorkingProcessCard = (props: WorkingProcessCardProps) => {
     <StyledWorkingProcessCard $isExpanded={isExpanded}>
       <StyledCollapsedContentWrapper>
         <StyledTypographyWrapper>
-          <Typography fontSize={isLG ? 'xxxl' : 'xl'} label={index} />
+          <Typography fontSize={isLG ? 'xxxl' : 'md'} label={index} />
 
-          <Typography label={title} fontSize={isLG ? 'lg' : 'sm'} tag="h3" />
+          <Typography label={title} fontSize={isLG ? 'lg' : 'xs'} tag="h3" />
         </StyledTypographyWrapper>
 
         <StyledExpandButton onClick={() => setIsExpanded(!isExpanded)}>
@@ -34,7 +34,7 @@ export const WorkingProcessCard = (props: WorkingProcessCardProps) => {
         <>
           <StyledHr />
 
-          <Typography label={description} fontSize="sm" />
+          <Typography label={description} fontSize={isLG ? 'sm' : 'xs'} />
         </>
       )}
     </StyledWorkingProcessCard>
@@ -51,7 +51,7 @@ const StyledWorkingProcessCard = styled.div<{
   background-color: ${({ $isExpanded, theme }) =>
     $isExpanded ? theme.colors.green : theme.colors.lightGrey};
   border: 1px solid ${({ theme }) => theme.colors.black};
-  border-radius: 2.875rem;
+  border-radius: 45px;
   box-shadow: 0 0.25rem 0 ${({ theme }) => theme.colors.black};
   padding: 2.5rem 3.75rem;
   margin-bottom: 0.25rem;
@@ -62,6 +62,11 @@ const StyledWorkingProcessCard = styled.div<{
     padding: 1rem 1.5rem;
     min-height: 4rem;
   `)}
+
+  ${respondTo('sm')(css`
+    padding: 1rem 0.75rem;
+    min-height: 4rem;
+  `)}
 `;
 
 const StyledCollapsedContentWrapper = styled.div`
@@ -69,6 +74,11 @@ const StyledCollapsedContentWrapper = styled.div`
   grid-auto-flow: column;
   justify-content: space-between;
   align-items: center;
+  grid-column-gap: 1rem;
+
+  ${respondTo('sm')(css`
+    grid-column-gap: 0.5rem;
+  `)}
 `;
 
 const StyledExpandButton = styled.button`
@@ -93,6 +103,10 @@ const StyledTypographyWrapper = styled.div`
   grid-auto-flow: column;
   grid-column-gap: 1.5rem;
   align-items: center;
+
+  ${respondTo('lg')(css`
+    grid-column-gap: 0.75rem;
+  `)}
 `;
 
 const StyledHr = styled.hr`
