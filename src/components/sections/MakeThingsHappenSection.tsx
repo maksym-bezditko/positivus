@@ -8,20 +8,20 @@ import { respondTo } from '../../styles/mixins/respondTo';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
 
 export const MakeThingsHappenSection = () => {
-  const isDesktop = useMediaQuery('xl');
+  const isDesktop = useMediaQuery('md');
 
   return (
     <StyledBannerWrapper>
       <StyledDetailsWrapper>
         <Typography
           label="Let's make things happen"
-          fontSize="lg"
+          fontSize={isDesktop ? 'lg' : 'md'}
           fontWeight={500}
         />
 
         <Typography
           label="Contact us today to learn more about how our digital marketing services can help your business grow and succeed online."
-          fontSize="md"
+          fontSize={isDesktop ? 'md' : 'xs'}
         />
 
         <StyledButtonWrapper>
@@ -63,6 +63,8 @@ const StyledBannerWrapper = styled.div`
 
   ${respondTo('xl')(css`
     grid-template-columns: none;
+    padding: 2rem;
+    margin-top: 3.75rem;
   `)}
 `;
 
