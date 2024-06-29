@@ -13,6 +13,7 @@ import { TeamSection } from './components/sections/TeamSection';
 // import { FooterSection } from './components/sections/FooterSection';
 import { respondTo } from './styles/mixins/respondTo';
 import { Section } from './components/Section';
+import { ContactUsSection } from './components/sections/ContactUsSection';
 
 const App = () => {
   return (
@@ -35,7 +36,7 @@ const App = () => {
 
       {/* <TestimonialsSection /> */}
 
-      {/* <ContactUsSection /> */}
+      <ContactUsSection />
 
       {/* <FooterSection /> */}
 

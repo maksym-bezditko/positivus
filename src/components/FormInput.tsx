@@ -1,6 +1,7 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Typography } from './Typography';
 import { theme } from '../theme';
+import { respondTo } from '../styles/mixins/respondTo';
 
 type FormInputProps = {
   label: string;
@@ -92,6 +93,12 @@ const StyledInput = styled.input<{
   &:focus {
     outline: none;
   }
+
+  ${respondTo('sm')(css`
+    font-size: ${({ theme }) => theme.fontSizes.xs};
+    padding: 0.5rem 1rem;
+    border-radius: 0.75rem;
+  `)}
 `;
 
 const StyledTextarea = styled.textarea<{
@@ -114,4 +121,10 @@ const StyledTextarea = styled.textarea<{
   &:focus {
     outline: none;
   }
+
+  ${respondTo('sm')(css`
+    font-size: ${({ theme }) => theme.fontSizes.xs};
+    padding: 0.5rem 1rem;
+    border-radius: 0.75rem;
+  `)}
 `;

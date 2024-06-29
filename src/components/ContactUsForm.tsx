@@ -1,14 +1,18 @@
 import { useState } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { FormInput } from './FormInput';
 import { Button } from './Button';
 
 import { Typography } from './Typography';
 import { theme } from '../theme';
 import { ContactFormDecor } from './svg/ContactFormDecor';
+import { respondTo } from '../styles/mixins/respondTo';
+import { useMediaQuery } from '../hooks/useMediaQuery';
 
 export const ContactUsForm = () => {
   const [isSayHi, setIsSayHi] = useState(true);
+
+  const isSm = useMediaQuery('sm');
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -28,7 +32,12 @@ export const ContactUsForm = () => {
               onChange={() => setIsSayHi(true)}
             />
 
-            <Typography htmlFor="say-hi" label="Say Hi" tag="label" />
+            <Typography
+              htmlFor="say-hi"
+              label="Say Hi"
+              tag="label"
+              fontSize={isSm ? 'md' : 'xs'}
+            />
           </StyledRadioButton>
 
           <StyledRadioButton>
@@ -40,7 +49,12 @@ export const ContactUsForm = () => {
               onChange={() => setIsSayHi(false)}
             />
 
-            <Typography htmlFor="get-a-quote" label="Get a Quote" tag="label" />
+            <Typography
+              htmlFor="get-a-quote"
+              label="Get a Quote"
+              tag="label"
+              fontSize={isSm ? 'md' : 'xs'}
+            />
           </StyledRadioButton>
         </StyledRadioButtonWrapper>
 
@@ -76,6 +90,19 @@ const StyledFormWrapper = styled.div`
   padding: 3.75rem 6.25rem;
   border-radius: 2.875rem;
   position: relative;
+
+  ${respondTo('xl')(css`
+    grid-template-columns: 3fr 2fr;
+    padding: 3.75rem 2.25rem;
+  `)}
+
+  ${respondTo('lg')(css`
+    grid-template-columns: none;
+  `)}
+
+  ${respondTo('sm')(css`
+    padding: 2.5rem 1.5rem;
+  `)}
 `;
 
 const StyledForm = styled.form`
@@ -88,10 +115,19 @@ const StyledDecorationWrapper = styled.div`
   align-items: center;
 
   position: absolute;
-  right: -305px;
+  right: -22rem;
   bottom: 0;
-  width: 650px;
+  width: 40rem;
   height: 100%;
+
+  ${respondTo('xl')(css`
+    width: 20rem;
+    right: -2rem;
+  `)}
+
+  ${respondTo('lg')(css`
+    display: none;
+  `)}
 `;
 
 const StyledRadioButtonWrapper = styled.div`
@@ -99,6 +135,11 @@ const StyledRadioButtonWrapper = styled.div`
   grid-auto-flow: column;
   grid-column-gap: 2.25rem;
   justify-content: start;
+
+  ${respondTo('sm')(css`
+    grid-auto-flow: row;
+    grid-row-gap: 1rem;
+  `)}
 `;
 
 const StyledRadioButton = styled.div`
