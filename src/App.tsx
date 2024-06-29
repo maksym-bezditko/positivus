@@ -7,7 +7,7 @@ import { BrandSection } from './components/sections/BrandSection';
 import { MakeThingsHappenSection } from './components/sections/MakeThingsHappenSection';
 // import { CaseStudiesSection } from './components/sections/CaseStudiesSection';
 import { WorkingProcessSection } from './components/sections/WorkingProcessSection';
-// import { TeamSection } from './components/sections/TeamSection';
+import { TeamSection } from './components/sections/TeamSection';
 // import { TestimonialsSection } from './components/sections/TestimonialsSection';
 // import { ContactUsSection } from './components/sections/ContactUsSection';
 // import { FooterSection } from './components/sections/FooterSection';
@@ -31,7 +31,7 @@ const App = () => {
 
       {/* <CaseStudiesSection /> */}
 
-      {/* <TeamSection /> */}
+      <TeamSection />
 
       {/* <TestimonialsSection /> */}
 

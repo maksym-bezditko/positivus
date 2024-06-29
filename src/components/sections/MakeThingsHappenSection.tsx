@@ -15,13 +15,13 @@ export const MakeThingsHappenSection = () => {
       <StyledDetailsWrapper>
         <Typography
           label="Let's make things happen"
-          fontSize={isDesktop ? 'lg' : 'md'}
+          fontSize={isDesktop ? 'lg' : 'sm'}
           fontWeight={500}
         />
 
         <Typography
           label="Contact us today to learn more about how our digital marketing services can help your business grow and succeed online."
-          fontSize={isDesktop ? 'md' : 'xs'}
+          fontSize={isDesktop ? 'md' : 'xxs'}
         />
 
         <StyledButtonWrapper>
@@ -55,7 +55,6 @@ const StyledBannerWrapper = styled.div`
   padding: 3.75rem;
   background-color: ${({ theme }) => theme.colors.lightGrey};
   border-radius: 2.875rem;
-  min-height: 22rem;
 
   ${respondTo('xxxxl')(css`
     grid-column-gap: 5rem;

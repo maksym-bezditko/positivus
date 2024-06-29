@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { TeamMember } from '../TeamMember';
 import { Button } from '../Button';
 
@@ -12,6 +12,8 @@ import BrianWilliams from '../../assets/team-members/brian-williams.png';
 import SarahKim from '../../assets/team-members/sarah-kim.png';
 import { Section } from '../Section';
 import { theme } from '../../theme';
+import { respondTo } from '../../styles/mixins/respondTo';
+import { useMediaQuery } from '../../hooks/useMediaQuery';
 
 const TEAM_MEMBERS: TeamMemberType[] = [
   {
@@ -60,6 +62,8 @@ const TEAM_MEMBERS: TeamMemberType[] = [
 ];
 
 export const TeamSection = () => {
+  const isMd = useMediaQuery('md');
+
   return (
     <Section
       title="Team"
@@ -74,11 +78,12 @@ export const TeamSection = () => {
       <StyledButtonWrapper>
         <Button
           label="See all team"
-          width="17rem"
+          width={isMd ? '17rem' : '100%'}
           backgroundColor={theme.colors.black}
           hoverBackgroundColor={theme.colors.white}
           color={theme.colors.white}
           hoverColor={theme.colors.black}
+          marginTop="2.5rem"
         />
       </StyledButtonWrapper>
     </Section>
@@ -87,8 +92,16 @@ export const TeamSection = () => {
 
 const StyledTeamWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
   grid-gap: 2.25rem;
+
+  ${respondTo('md')(css`
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  `)}
+
+  ${respondTo('xsm')(css`
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  `)}
 `;
 
 const StyledButtonWrapper = styled.div`
@@ -96,4 +109,8 @@ const StyledButtonWrapper = styled.div`
   justify-content: end;
 
   margin-top: 2.5rem;
+
+  ${respondTo('md')(css`
+    display: contents;
+  `)}
 `;

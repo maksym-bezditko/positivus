@@ -28,6 +28,7 @@ export const Section = (props: SectionProps) => {
               borderRadius={0.5}
               paddingLeft={0.5}
               paddingRight={0.5}
+              textAlign={'center'}
             />
           )}
 
