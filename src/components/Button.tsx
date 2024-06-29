@@ -88,4 +88,8 @@ const StyledButton = styled.button<{
 
     font-size: ${theme.fontSizes.sm};
   `)}
+
+  ${respondTo('md')(css`
+    font-size: ${theme.fontSizes.xs};
+  `)}
 `;
