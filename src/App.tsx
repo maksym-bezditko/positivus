@@ -14,6 +14,7 @@ import { TeamSection } from './components/sections/TeamSection';
 import { respondTo } from './styles/mixins/respondTo';
 import { Section } from './components/Section';
 import { ContactUsSection } from './components/sections/ContactUsSection';
+import { FooterSection } from './components/sections/FooterSection';
 
 const App = () => {
   return (
@@ -38,7 +39,7 @@ const App = () => {
 
       <ContactUsSection />
 
-      {/* <FooterSection /> */}
+      <FooterSection />
 
       <Section />
     </PageWrapper>

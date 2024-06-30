@@ -33,6 +33,7 @@ export const theme = {
     md: '768px',
     lg: '992px',
     xl: '1200px',
+    xsl: '1300px',
     xxl: '1400px',
     xxxl: '1600px',
     xxxxl: '1700px'

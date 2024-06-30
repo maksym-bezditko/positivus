@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Section } from '../Section';
 import { FooterLogo } from '../svg/FooterLogo';
 import { NavigationItems } from '../NavigationItems';
@@ -9,8 +9,13 @@ import { Typography } from '../Typography';
 import { FormInput } from '../FormInput';
 import { Button } from '../Button';
 import { theme } from '../../theme';
+import { useMediaQuery } from '../../hooks/useMediaQuery';
+import { respondTo } from '../../styles/mixins/respondTo';
 
 export const FooterSection = () => {
+  const isXsl = useMediaQuery('xsl');
+  const isLg = useMediaQuery('lg');
+
   return (
     <Section>
       <StyledFooterWrapper>
@@ -25,13 +30,15 @@ export const FooterSection = () => {
             underlineHeight={1}
           />
 
-          <StyledSocialMediaLinksWrapper>
-            <LinkedInIcon />
+          {isXsl && (
+            <StyledSocialMediaLinksWrapper>
+              <LinkedInIcon />
 
-            <FacebookIcon />
+              <FacebookIcon />
 
-            <TwitterIcon />
-          </StyledSocialMediaLinksWrapper>
+              <TwitterIcon />
+            </StyledSocialMediaLinksWrapper>
+          )}
         </StyledFooterUpperPartWrapper>
 
         <StyledFooterMiddlePartWrapper>
@@ -89,6 +96,16 @@ export const FooterSection = () => {
               width="100%"
             />
           </StyledEmailInputWrapper>
+
+          {!isXsl && (
+            <StyledSocialMediaLinksWrapper>
+              <LinkedInIcon />
+
+              <FacebookIcon />
+
+              <TwitterIcon />
+            </StyledSocialMediaLinksWrapper>
+          )}
         </StyledFooterMiddlePartWrapper>
 
         <StyledHr />
@@ -99,13 +116,15 @@ export const FooterSection = () => {
             color={theme.colors.white}
           />
 
-          <Typography
-            label="Privacy Policy"
-            href="/"
-            color={theme.colors.white}
-            isUnderlined
-            underlineHeight={1}
-          />
+          <StyledBottomLinkWrapper>
+            <Typography
+              label="Privacy Policy"
+              href="/"
+              color={theme.colors.white}
+              isUnderlined
+              underlineHeight={1}
+            />
+          </StyledBottomLinkWrapper>
         </StyledFooterLowerPartWrapper>
       </StyledFooterWrapper>
     </Section>
@@ -133,7 +152,13 @@ const StyledFooterMiddlePartWrapper = styled.div`
   grid-template-columns: 1fr 2fr;
   justify-content: space-between;
   align-items: center;
-  grid-column-gap: 2.5rem;
+  grid-gap: 2.5rem;
+
+  ${respondTo('xsl')(css`
+    grid-template-columns: none;
+    grid-auto-flow: row;
+    justify-content: center;
+  `)}
 `;
 
 const StyledFooterLowerPartWrapper = styled.div`
@@ -141,7 +166,13 @@ const StyledFooterLowerPartWrapper = styled.div`
   grid-auto-flow: column;
   justify-content: start;
   align-items: center;
-  grid-column-gap: 2.5rem;
+  grid-gap: 2.5rem;
+
+  ${respondTo('lg')(css`
+    grid-auto-flow: row;
+    grid-gap: 1.5rem;
+    justify-content: center;
+  `)}
 `;
 
 const StyledSocialMediaLinksWrapper = styled.div`
@@ -150,6 +181,10 @@ const StyledSocialMediaLinksWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   grid-column-gap: 1.25rem;
+
+  ${respondTo('xsl')(css`
+    justify-content: center;
+  `)}
 `;
 
 const StyledContactUsWrapper = styled.div`
@@ -163,12 +198,28 @@ const StyledEmailInputWrapper = styled.div`
   grid-template-columns: 1fr 1fr;
   justify-content: space-between;
   align-items: center;
-  grid-column-gap: 1.125rem;
+  grid-gap: 1.125rem;
 
   background-color: ${({ theme }) => theme.colors.darkGrey};
   height: 100%;
   padding: 0 2.5rem;
   border-radius: 1rem;
+
+  ${respondTo('xsl')(css`
+    padding: 2.5rem;
+    grid-template-columns: none;
+    grid-auto-flow: row;
+    justify-content: stretch;
+  `)}
+`;
+
+const StyledBottomLinkWrapper = styled.div`
+  display: contents;
+
+  ${respondTo('lg')(css`
+    display: grid;
+    place-items: center;
+  `)}
 `;
 
 const StyledHr = styled.hr`
