@@ -14,7 +14,8 @@ import { respondTo } from '../../styles/mixins/respondTo';
 
 export const FooterSection = () => {
   const isXsl = useMediaQuery('xsl');
-  const isLg = useMediaQuery('lg');
+
+  const isMd = useMediaQuery('md');
 
   return (
     <Section>
@@ -56,21 +57,21 @@ export const FooterSection = () => {
             <Typography
               label="info@positivus.com"
               color={theme.colors.white}
-              fontSize="sm"
+              fontSize={isMd ? 'sm' : 'xs'}
               isEmail
             />
 
             <Typography
               label="555-567-8901"
               color={theme.colors.white}
-              fontSize="sm"
+              fontSize={isMd ? 'sm' : 'xs'}
               isPhone
             />
 
             <Typography
               label="Address: 1234 Main St Moonstone City, Stardust State 12345"
               color={theme.colors.white}
-              fontSize="sm"
+              fontSize={isMd ? 'sm' : 'xs'}
             />
           </StyledContactUsWrapper>
 
@@ -114,6 +115,8 @@ export const FooterSection = () => {
           <Typography
             label="© 2023 Positivus. All Rights Reserved."
             color={theme.colors.white}
+            fontSize={isMd ? 'sm' : 'xs'}
+            textAlign='center'
           />
 
           <StyledBottomLinkWrapper>
@@ -123,6 +126,7 @@ export const FooterSection = () => {
               color={theme.colors.white}
               isUnderlined
               underlineHeight={1}
+              fontSize={isMd ? 'sm' : 'xs'}
             />
           </StyledBottomLinkWrapper>
         </StyledFooterLowerPartWrapper>
@@ -136,6 +140,14 @@ const StyledFooterWrapper = styled.footer`
   border-top-left-radius: 2.875rem;
   background-color: ${({ theme }) => theme.colors.dark};
   padding: 3.5rem 3.75rem 3rem;
+
+  ${respondTo('md')(css`
+    padding: 3rem;
+  `)}
+
+  ${respondTo('sm')(css`
+    padding: 2rem 1rem;
+  `)}
 `;
 
 const StyledFooterUpperPartWrapper = styled.div`
@@ -145,6 +157,15 @@ const StyledFooterUpperPartWrapper = styled.div`
   align-items: center;
 
   margin-bottom: 4rem;
+
+  ${respondTo('lg')(css`
+    grid-auto-flow: row;
+    grid-gap: 2rem;
+  `)}
+
+  ${respondTo('md')(css`
+    justify-content: center;
+  `)}
 `;
 
 const StyledFooterMiddlePartWrapper = styled.div`
@@ -157,7 +178,7 @@ const StyledFooterMiddlePartWrapper = styled.div`
   ${respondTo('xsl')(css`
     grid-template-columns: none;
     grid-auto-flow: row;
-    justify-content: center;
+    justify-content: stretch;
   `)}
 `;
 
@@ -170,7 +191,7 @@ const StyledFooterLowerPartWrapper = styled.div`
 
   ${respondTo('lg')(css`
     grid-auto-flow: row;
-    grid-gap: 1.5rem;
+    grid-gap: 1rem;
     justify-content: center;
   `)}
 `;
@@ -191,6 +212,10 @@ const StyledContactUsWrapper = styled.div`
   display: grid;
   justify-content: space-between;
   grid-row-gap: 1.5rem;
+
+  ${respondTo('lg')(css`
+    grid-row-gap: 1rem;
+  `)}
 `;
 
 const StyledEmailInputWrapper = styled.div`
@@ -210,6 +235,10 @@ const StyledEmailInputWrapper = styled.div`
     grid-template-columns: none;
     grid-auto-flow: row;
     justify-content: stretch;
+  `)}
+
+  ${respondTo('lg')(css`
+    padding: 1.5rem;
   `)}
 `;
 

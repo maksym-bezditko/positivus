@@ -12,37 +12,41 @@ import { TeamSection } from './components/sections/TeamSection';
 // import { ContactUsSection } from './components/sections/ContactUsSection';
 // import { FooterSection } from './components/sections/FooterSection';
 import { respondTo } from './styles/mixins/respondTo';
-import { Section } from './components/Section';
 import { ContactUsSection } from './components/sections/ContactUsSection';
 import { FooterSection } from './components/sections/FooterSection';
+import { useMediaQuery } from './hooks/useMediaQuery';
 
 const App = () => {
+  const isLg = useMediaQuery('lg');
+
   return (
-    <PageWrapper>
-      <Header />
+    <>
+      <PageWrapper>
+        <Header />
 
-      <MainSection />
+        <MainSection />
 
-      <BrandSection />
+        <BrandSection />
 
-      <ServiceSection />
+        <ServiceSection />
 
-      <MakeThingsHappenSection />
+        <MakeThingsHappenSection />
 
-      <WorkingProcessSection />
+        <WorkingProcessSection />
 
-      {/* <CaseStudiesSection /> */}
+        {/* <CaseStudiesSection /> */}
 
-      <TeamSection />
+        <TeamSection />
 
-      {/* <TestimonialsSection /> */}
+        {/* <TestimonialsSection /> */}
 
-      <ContactUsSection />
+        <ContactUsSection />
 
-      <FooterSection />
+        {isLg && <FooterSection />}
+      </PageWrapper>
 
-      <Section />
-    </PageWrapper>
+      {!isLg && <FooterSection />}
+    </>
   );
 };
 
@@ -58,8 +62,12 @@ const PageWrapper = styled.div`
     padding: 1.5rem 2rem 0;
   `)}
 
-${respondTo('lg')(css`
+  ${respondTo('lg')(css`
     padding: 1rem 1.5rem 0;
+  `)}
+
+  ${respondTo('sm')(css`
+    padding: 1rem 0.5rem 0;
   `)}
 `;
 

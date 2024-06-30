@@ -47,15 +47,15 @@ export const NavigationItems = (props: NavigationItemsProps) => {
         <StyledNavigationOptionWrapper key={option} {...animationProps}>
           <StyledNavigationOptionAnchor $color={color} $fontSize={fontSize}>
             {option}
-          </StyledNavigationOptionAnchor>
 
-          {isUnderlined && (
-            <StyledUnderline
-              variants={UNDERLINE_VARIANTS}
-              $color={color}
-              $underlineHeight={underlineHeight}
-            />
-          )}
+            {isUnderlined && (
+              <StyledUnderline
+                variants={UNDERLINE_VARIANTS}
+                $color={color}
+                $underlineHeight={underlineHeight}
+              />
+            )}
+          </StyledNavigationOptionAnchor>
         </StyledNavigationOptionWrapper>
       ))}
     </StyledNavigationOptionsWrapper>
@@ -70,7 +70,18 @@ const StyledNavigationOptionsWrapper = styled.div`
   grid-column-gap: 2.5rem;
 
   ${respondTo('xxl')(css`
-     grid-column-gap: 1rem;
+    grid-column-gap: 1rem;
+  `)}
+
+  ${respondTo('lg')(css`
+    grid-gap: 1rem;
+    justify-content: center;
+  `)}
+
+  ${respondTo('md')(css`
+    grid-gap: 1rem;
+    justify-content: center;
+    grid-auto-flow: row;
   `)}
 `;
 
@@ -80,6 +91,7 @@ const StyledNavigationOptionAnchor = styled(motion.a)<{
   $color: string;
   $fontSize: number;
 }>`
+  display: inline-block;
   font-size: ${(props) => props.$fontSize}px;
   color: ${(props) => props.$color};
   text-decoration: none;

@@ -94,6 +94,12 @@ const StyledInput = styled.input<{
     outline: none;
   }
 
+  ${respondTo('lg')(css`
+    font-size: ${({ theme }) => theme.fontSizes.xs};
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+  `)}
+
   ${respondTo('sm')(css`
     font-size: ${({ theme }) => theme.fontSizes.xs};
     padding: 0.5rem 1rem;
@@ -121,6 +127,12 @@ const StyledTextarea = styled.textarea<{
   &:focus {
     outline: none;
   }
+
+  ${respondTo('lg')(css`
+    font-size: ${({ theme }) => theme.fontSizes.xs};
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+  `)}
 
   ${respondTo('sm')(css`
     font-size: ${({ theme }) => theme.fontSizes.xs};
