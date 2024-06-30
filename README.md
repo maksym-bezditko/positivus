@@ -57,7 +57,7 @@ To run the project locally, use the following command:
 npm run dev
 ```
 
-This will start the development server and you can view the project at `http://localhost:3000`.
+This will start the development server and you can view the project at `http://localhost:5173`.
 
 ## Scripts
 
@@ -69,7 +69,3 @@ This will start the development server and you can view the project at `http://l
 ## Inspiration
 
 This project is inspired by the [Positivus Landing Page Design](<https://www.figma.com/design/LWGadn1gJdKKqoqJI1pyEH/Positivus-Landing-Page-Design-(Community)?node-id=330-762&t=oMZF1syIfryT1C8R-0>) on Figma.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
