@@ -69,18 +69,18 @@ export const CaseStudiesSection = () => {
 
 const StyledSlider = styled(Slider)`
   .slick-list {
-    margin: 0 -15px;
+    margin: 0 -1rem;
 
     ${respondTo('sm')(css`
-      margin: 0 -10px;
+      margin: 0 -0.75rem;
     `)}
   }
 
   .slick-slide > div {
-    padding: 0 15px;
+    padding: 0 1rem;
 
     ${respondTo('sm')(css`
-      padding: 0 10px;
+      padding: 0 0.75rem;
     `)}
   }
 
