@@ -1,8 +1,11 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Typography } from '../Typography';
 import { LearnMore } from '../LearnMore';
 import { Section } from '../Section';
 import { theme } from '../../theme';
+import { respondTo } from '../../styles/mixins/respondTo';
+import { useMediaQuery } from '../../hooks/useMediaQuery';
+import Slider, { Settings } from 'react-slick';
 
 const CASE_STUDIES = [
   'For a local restaurant, we implemented a targeted PPC campaign that resulted in a 50% increase in website traffic and a 25% increase in sales.',
@@ -11,52 +14,127 @@ const CASE_STUDIES = [
 ];
 
 export const CaseStudiesSection = () => {
+  const isLg = useMediaQuery('lg');
+  const isSm = useMediaQuery('sm');
+
+  const settings: Settings = {
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    centerMode: true
+  };
+
   return (
     <Section
       title="Case Studies"
       description="Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies"
+      withOverflowContent
     >
-      <StyledCaseStudiesWrapper>
-        {CASE_STUDIES.map((caseStudy) => (
-          <StyledCaseStudy key={caseStudy}>
-            <Typography
-              label={caseStudy}
-              fontSize="xs"
-              fontWeight={300}
-              color={theme.colors.white}
-            />
+      {isLg ? (
+        <StyledCaseStudiesWrapper>
+          {CASE_STUDIES.map((caseStudy) => (
+            <StyledCaseStudy key={caseStudy}>
+              <Typography
+                label={caseStudy}
+                fontWeight={300}
+                color={theme.colors.white}
+                fontSize={isSm ? 'xs' : 'xxs'}
+              />
 
-            <LearnMore iconVariant="green" arrowPosition="right" />
-          </StyledCaseStudy>
-        ))}
-      </StyledCaseStudiesWrapper>
+              <LearnMore iconVariant="green" arrowPosition="right" />
+            </StyledCaseStudy>
+          ))}
+        </StyledCaseStudiesWrapper>
+      ) : (
+        <StyledSlider {...settings}>
+          {CASE_STUDIES.map((caseStudy) => (
+            <StyledCaseStudy key={caseStudy}>
+              <Typography
+                label={caseStudy}
+                fontWeight={300}
+                color={theme.colors.white}
+                fontSize={isSm ? 'xs' : 'xxs'}
+              />
+
+              <LearnMore iconVariant="green" arrowPosition="right" />
+            </StyledCaseStudy>
+          ))}
+        </StyledSlider>
+      )}
     </Section>
   );
 };
 
+const StyledSlider = styled(Slider)`
+  .slick-list {
+    margin: 0 -15px;
+
+    ${respondTo('sm')(css`
+      margin: 0 -10px;
+    `)}
+  }
+
+  .slick-slide > div {
+    padding: 0 15px;
+
+    ${respondTo('sm')(css`
+      padding: 0 10px;
+    `)}
+  }
+
+  .slick-track {
+    display: flex;
+  }
+
+  .slick-slide {
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+  }
+`;
+
 const StyledCaseStudiesWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 11.25rem;
+  justify-content: space-between;
+  grid-gap: 10rem;
 
   padding: 4.375rem 3.75rem;
   background-color: ${({ theme }) => theme.colors.dark};
   border-radius: 2.875rem;
+
+  ${respondTo('xl')(css`
+    grid-column-gap: 5rem;
+  `)}
 `;
 
 const StyledCaseStudy = styled.div`
-  display: grid;
+  display: grid !important;
   grid-row-gap: 1.25rem;
   position: relative;
 
-  &:not(:first-child):before {
+  ${respondTo('lg')(css`
+    background-color: ${({ theme }) => theme.colors.dark};
+    padding: 2.5rem;
+    border-radius: 45px;
+    height: 100%;
+  `)}
+
+  &:not(:last-child):before {
     content: '';
     position: absolute;
-    left: -3.75rem;
     top: 0;
+    right: -5rem;
     display: block;
     width: 1px;
     height: 100%;
     background-color: ${({ theme }) => theme.colors.white};
+
+    ${respondTo('xl')(css`
+      right: -2.5rem;
+    `)}
   }
 `;

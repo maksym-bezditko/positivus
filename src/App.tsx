@@ -1,3 +1,6 @@
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 import styled, { css } from 'styled-components';
 import { Header } from './components/Header';
 
@@ -7,7 +10,6 @@ import { BrandSection } from './components/sections/BrandSection';
 import { MakeThingsHappenSection } from './components/sections/MakeThingsHappenSection';
 // import { CaseStudiesSection } from './components/sections/CaseStudiesSection';
 import { WorkingProcessSection } from './components/sections/WorkingProcessSection';
-import { TeamSection } from './components/sections/TeamSection';
 // import { TestimonialsSection } from './components/sections/TestimonialsSection';
 // import { ContactUsSection } from './components/sections/ContactUsSection';
 // import { FooterSection } from './components/sections/FooterSection';
@@ -15,42 +17,57 @@ import { respondTo } from './styles/mixins/respondTo';
 import { ContactUsSection } from './components/sections/ContactUsSection';
 import { FooterSection } from './components/sections/FooterSection';
 import { useMediaQuery } from './hooks/useMediaQuery';
+import { CaseStudiesSection } from './components/sections/CaseStudiesSection';
 
 const App = () => {
   const isLg = useMediaQuery('lg');
 
   return (
     <>
-      <PageWrapper>
+      <StyledPaddingWrapper>
         <Header />
+      </StyledPaddingWrapper>
 
+      <StyledPaddingWrapper>
         <MainSection />
+      </StyledPaddingWrapper>
 
+      <StyledPaddingWrapper>
         <BrandSection />
+      </StyledPaddingWrapper>
 
+      <StyledPaddingWrapper>
         <ServiceSection />
+      </StyledPaddingWrapper>
 
+      <StyledPaddingWrapper>
         <MakeThingsHappenSection />
+      </StyledPaddingWrapper>
 
+      <StyledPaddingWrapper>
         <WorkingProcessSection />
+      </StyledPaddingWrapper>
 
-        {/* <CaseStudiesSection /> */}
+      <StyledCaseStudiesPaddingWrapper>
+        <CaseStudiesSection />
+      </StyledCaseStudiesPaddingWrapper>
 
-        <TeamSection />
-
-        {/* <TestimonialsSection /> */}
-
+      <StyledPaddingWrapper>
         <ContactUsSection />
+      </StyledPaddingWrapper>
 
-        {isLg && <FooterSection />}
-      </PageWrapper>
-
-      {!isLg && <FooterSection />}
+      {isLg ? (
+        <StyledPaddingWrapper>
+          <FooterSection />
+        </StyledPaddingWrapper>
+      ) : (
+        <FooterSection />
+      )}
     </>
   );
 };
 
-const PageWrapper = styled.div`
+const StyledPaddingWrapper = styled.div`
   padding-top: 3.75rem;
   padding: 3.75rem 6.25rem 0;
 
@@ -68,6 +85,27 @@ const PageWrapper = styled.div`
 
   ${respondTo('sm')(css`
     padding: 1rem 0.5rem 0;
+  `)}
+`;
+
+const StyledCaseStudiesPaddingWrapper = styled.div`
+  padding-top: 3.75rem;
+  padding: 3.75rem 6.25rem;
+
+  ${respondTo('xxl')(css`
+    padding: 2rem 2rem;
+  `)}
+
+  ${respondTo('xl')(css`
+    padding: 1.5rem 2rem;
+  `)}
+
+  ${respondTo('lg')(css`
+    padding: 1rem 0;
+  `)}
+
+  ${respondTo('sm')(css`
+    padding: 1rem 0;
   `)}
 `;
 

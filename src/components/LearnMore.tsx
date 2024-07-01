@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { LearnMoreIcon, type LearnMoreIconProps } from './svg/LearnMoreIcon';
 import { Typography } from './Typography';
 import { theme } from '../theme';
+import { useMediaQuery } from '../hooks/useMediaQuery';
 
 type LearnMoreProps = {
   iconVariant: LearnMoreIconProps['variant'];
@@ -32,11 +33,19 @@ export const LearnMore = (props: LearnMoreProps) => {
     withLabel = true
   } = props;
 
+  const isSm = useMediaQuery('sm');
+
   return (
     <StyledLearnMoreWrapper>
       {arrowPosition === 'left' && <LearnMoreIcon variant={iconVariant} />}
 
-      {withLabel && <Typography label="Learn more" color={typographyColor} />}
+      {withLabel && (
+        <Typography
+          label="Learn more"
+          color={typographyColor}
+          fontSize={isSm ? 'md' : 'xs'}
+        />
+      )}
 
       {arrowPosition === 'right' && <LearnMoreIcon variant={iconVariant} />}
     </StyledLearnMoreWrapper>

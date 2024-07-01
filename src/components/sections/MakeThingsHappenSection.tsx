@@ -51,7 +51,7 @@ const StyledBannerWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  margin-top: 7.75rem;
+  margin-top: 5rem;
   padding: 3.75rem;
   background-color: ${({ theme }) => theme.colors.lightGrey};
   border-radius: 2.875rem;

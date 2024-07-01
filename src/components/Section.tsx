@@ -8,17 +8,23 @@ import { useMediaQuery } from '../hooks/useMediaQuery';
 type SectionProps = PropsWithChildren<{
   title?: string;
   description?: string;
+  withOverflowContent?: boolean;
 }>;
 
 export const Section = (props: SectionProps) => {
-  const { children, description = '', title = '' } = props;
+  const {
+    children,
+    description = '',
+    title = '',
+    withOverflowContent = false
+  } = props;
 
   const isDesktop = useMediaQuery('lg');
 
   return (
     <StyledSectionWrapper>
       {(description || title) && (
-        <StyledHeadingWrapper>
+        <StyledHeadingWrapper $withOverflowContent={withOverflowContent}>
           {title && (
             <Typography
               label={title}
@@ -57,7 +63,9 @@ const StyledSectionWrapper = styled.section`
   `)}
 `;
 
-const StyledHeadingWrapper = styled.div`
+const StyledHeadingWrapper = styled.div<{
+  $withOverflowContent: string;
+}>`
   display: grid;
   grid-auto-flow: column;
   grid-column-gap: 2.5rem;
@@ -66,6 +74,20 @@ const StyledHeadingWrapper = styled.div`
 
   max-width: 50rem;
   margin-bottom: 5rem;
+
+  ${({ $withOverflowContent }) =>
+    $withOverflowContent &&
+    css`
+      ${respondTo('lg')(css`
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+      `)}
+
+      ${respondTo('sm')(css`
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+      `)}
+    `}
 
   ${respondTo('xxl')(css`
     margin-bottom: 3.75rem;
