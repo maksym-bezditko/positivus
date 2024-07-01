@@ -13,18 +13,18 @@ const CASE_STUDIES = [
   'For a national retail chain, we created a social media marketing campaign that increased followers by 25% and generated a 20% increase in online sales.'
 ];
 
+const settings: Settings = {
+  infinite: false,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: true,
+  centerMode: true
+};
+
 export const CaseStudiesSection = () => {
   const isLg = useMediaQuery('lg');
   const isSm = useMediaQuery('sm');
-
-  const settings: Settings = {
-    infinite: false,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: true,
-    centerMode: true
-  };
 
   return (
     <Section
