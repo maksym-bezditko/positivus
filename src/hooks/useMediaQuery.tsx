@@ -6,8 +6,6 @@ export const useMediaQuery = (
 ): boolean => {
   const [matches, setMatches] = useState<boolean>(false);
 
-	console.log(`(max-width: ${theme.breakpoints[query]})`);
-
   useEffect(() => {
     const matchQueryList = window.matchMedia(
       `(min-width: ${theme.breakpoints[query]})`
