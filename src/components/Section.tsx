@@ -64,7 +64,7 @@ const StyledSectionWrapper = styled.section`
 `;
 
 const StyledHeadingWrapper = styled.div<{
-  $withOverflowContent: string;
+  $withOverflowContent: boolean;
 }>`
   display: grid;
   grid-auto-flow: column;
