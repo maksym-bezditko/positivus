@@ -23,7 +23,6 @@ export const ServiceCard = (props: ServiceCardProps) => {
     backgroundColor = theme.colors.lightGrey
   } = props;
 
-  const isXXXXL = useMediaQuery('xxxxl');
   const isMD = useMediaQuery('md');
 
   return (
