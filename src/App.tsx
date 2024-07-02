@@ -8,17 +8,14 @@ import { MainSection } from './components/sections/MainSection';
 import { ServiceSection } from './components/sections/ServiceSection';
 import { BrandSection } from './components/sections/BrandSection';
 import { MakeThingsHappenSection } from './components/sections/MakeThingsHappenSection';
-// import { CaseStudiesSection } from './components/sections/CaseStudiesSection';
 import { WorkingProcessSection } from './components/sections/WorkingProcessSection';
-// import { TestimonialsSection } from './components/sections/TestimonialsSection';
-// import { ContactUsSection } from './components/sections/ContactUsSection';
-// import { FooterSection } from './components/sections/FooterSection';
 import { respondTo } from './styles/mixins/respondTo';
 import { ContactUsSection } from './components/sections/ContactUsSection';
 import { FooterSection } from './components/sections/FooterSection';
 import { useMediaQuery } from './hooks/useMediaQuery';
 import { CaseStudiesSection } from './components/sections/CaseStudiesSection';
 import { TestimonialsSection } from './components/sections/TestimonialsSection';
+import { TeamSection } from './components/sections/TeamSection';
 
 const App = () => {
   const isLg = useMediaQuery('lg');
@@ -31,10 +28,6 @@ const App = () => {
 
       <StyledPaddingWrapper>
         <MainSection />
-      </StyledPaddingWrapper>
-
-      <StyledPaddingWrapper>
-        <TestimonialsSection />
       </StyledPaddingWrapper>
 
       <StyledPaddingWrapper>
@@ -51,6 +44,14 @@ const App = () => {
 
       <StyledPaddingWrapper>
         <WorkingProcessSection />
+      </StyledPaddingWrapper>
+
+      <StyledPaddingWrapper>
+        <TeamSection />
+      </StyledPaddingWrapper>
+
+      <StyledPaddingWrapper>
+        <TestimonialsSection />
       </StyledPaddingWrapper>
 
       <StyledCaseStudiesPaddingWrapper>
