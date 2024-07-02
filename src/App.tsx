@@ -18,6 +18,7 @@ import { ContactUsSection } from './components/sections/ContactUsSection';
 import { FooterSection } from './components/sections/FooterSection';
 import { useMediaQuery } from './hooks/useMediaQuery';
 import { CaseStudiesSection } from './components/sections/CaseStudiesSection';
+import { TestimonialsSection } from './components/sections/TestimonialsSection';
 
 const App = () => {
   const isLg = useMediaQuery('lg');
@@ -30,6 +31,10 @@ const App = () => {
 
       <StyledPaddingWrapper>
         <MainSection />
+      </StyledPaddingWrapper>
+
+      <StyledPaddingWrapper>
+        <TestimonialsSection />
       </StyledPaddingWrapper>
 
       <StyledPaddingWrapper>

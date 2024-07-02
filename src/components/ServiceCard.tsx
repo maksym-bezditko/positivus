@@ -36,7 +36,7 @@ export const ServiceCard = (props: ServiceCardProps) => {
               backgroundColor={serviceTextBackgroundColor}
               borderRadius={0.5}
               fontWeight={500}
-              fontSize={isXXXXL ? 'xl' : 'lg'}
+              fontSize="lg"
               paddingLeft={0.5}
               paddingRight={0.5}
             />

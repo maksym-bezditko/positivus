@@ -1,6 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Typography } from './Typography';
 import { theme } from '../theme';
+import { respondTo } from '../styles/mixins/respondTo';
+import { useMediaQuery } from '../hooks/useMediaQuery';
 
 export type SliderItemProps = {
   authorName: string;
@@ -11,12 +13,14 @@ export type SliderItemProps = {
 export const SliderItem = (props: SliderItemProps) => {
   const { authorName, authorPosition, authorDescription } = props;
 
+  const isSm = useMediaQuery('sm');
+
   return (
     <StyledSliderItemWrapper>
       <StyledDescriptionWrapper>
         <Typography
           label={authorDescription}
-          fontSize="sm"
+          fontSize={isSm ? 'sm' : 'xxs'}
           color={theme.colors.white}
         />
       </StyledDescriptionWrapper>
@@ -25,31 +29,34 @@ export const SliderItem = (props: SliderItemProps) => {
         <Typography
           label={authorName}
           fontWeight={500}
+          fontSize={isSm ? 'md' : 'sm'}
           color={theme.colors.green}
         />
 
-        <Typography label={authorPosition} color={theme.colors.white} />
+        <Typography
+          label={authorPosition}
+          fontSize={isSm ? 'md' : 'xs'}
+          color={theme.colors.white}
+        />
       </StyledNameAndPositionWrapper>
     </StyledSliderItemWrapper>
   );
 };
 
 const StyledSliderItemWrapper = styled.div`
-  display: grid;
-  grid-auto-flow: row;
-  grid-row-gap: 3rem;
-  justify-content: space-between;
-  align-items: center;
-
-  width: 61.25rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 3.5rem;
+  height: 100%;
+  max-width: 38rem;
 `;
 
 const StyledDescriptionWrapper = styled.div`
   position: relative;
   border: 2px solid ${({ theme }) => theme.colors.green};
-  border-radius: 2.875rem;
+  border-radius: 45px;
   padding: 3rem 3.25rem;
-  height: 22.5rem;
+  flex-grow: 1;
 
   &:after {
     content: '';
@@ -60,11 +67,23 @@ const StyledDescriptionWrapper = styled.div`
     background-color: ${({ theme }) => theme.colors.dark};
     transform: rotate(-45deg);
     position: absolute;
-    bottom: -1.5rem;
+    bottom: -1.6rem;
     left: 3.75rem;
   }
+
+  ${respondTo('sm')(css`
+    padding: 2rem 2.5rem;
+  `)}
+
+  ${respondTo('xsm')(css`
+    padding: 1rem 1.5rem;
+  `)}
 `;
 
 const StyledNameAndPositionWrapper = styled.div`
   padding: 0 5rem;
+
+  ${respondTo('sm')(css`
+    padding: 0 0 0 3rem;
+  `)}
 `;

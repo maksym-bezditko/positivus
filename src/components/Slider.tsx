@@ -1,9 +1,9 @@
-import styled from 'styled-components';
-import { LeftArrowIcon } from './svg/LeftArrowIcon';
-import { RightArrowIcon } from './svg/RightArrowIcon';
+import styled, { css } from 'styled-components';
+import { SliderItem, SliderItemProps } from './SliderItem';
+import { default as SlickSlider, Settings } from 'react-slick';
+import { respondTo } from '../styles/mixins/respondTo';
 import { PaginationStarIcon } from './svg/PaginationStarIcon';
 import { useState } from 'react';
-import { SliderItem, SliderItemProps } from './SliderItem';
 
 const MOCK_SLIDER_DATA: SliderItemProps[] = [
   {
@@ -16,7 +16,7 @@ const MOCK_SLIDER_DATA: SliderItemProps[] = [
     authorName: 'Jane Doe',
     authorPosition: 'CEO at ABC Inc',
     authorDescription:
-      "Positivus has completely transformed our online presence. Their team is knowledgeable, attentive, and truly dedicated to their clients. We've seen remarkable improvements in our website traffic and customer engagement. Highly recommend!"
+      "Positivents. We've seen remarkable improvements in our website traffic and customer engagement. Highly recommend!"
   },
   {
     authorName: 'Michael Brown',
@@ -38,141 +38,72 @@ const MOCK_SLIDER_DATA: SliderItemProps[] = [
   }
 ];
 
-const INITIAL_SLIDER_INDEX =
-  MOCK_SLIDER_DATA.length % 2 === 0
-    ? 0
-    : Math.ceil(MOCK_SLIDER_DATA.length / 2) - 1;
-
 export const Slider = () => {
-  const [sliderIndex, setSliderIndex] = useState(INITIAL_SLIDER_INDEX);
+  const [slideIndex, setSlideIndex] = useState(0);
 
-  const handleGoForth = () => {
-    if (sliderIndex < MOCK_SLIDER_DATA.length - 1) {
-      setSliderIndex((prev) => prev + 1);
-    }
+  const SETTINGS: Settings = {
+    customPaging: function (i) {
+      return <PaginationStarIcon isFilled={i === slideIndex} />;
+    },
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1.4,
+    arrows: true,
+    centerMode: true,
+    beforeChange: (_, next) => setSlideIndex(next)
   };
-
-  const handleGoBack = () => {
-    if (sliderIndex > 0) {
-      setSliderIndex((prev) => prev - 1);
-    }
-  };
-
-  const isGoForthActive = sliderIndex < MOCK_SLIDER_DATA.length - 1;
-  const isGoBackActive = sliderIndex > 0;
 
   return (
     <StyledSliderWrapper>
-      <StyledSliderItemsWrapper>
-        <StyledSliderOverlay $sliderIndex={sliderIndex}>
-          {MOCK_SLIDER_DATA.map((data) => (
-            <StyledSliderItemWrapper key={data.authorName}>
-              <SliderItem {...data} />
-            </StyledSliderItemWrapper>
-          ))}
-        </StyledSliderOverlay>
-      </StyledSliderItemsWrapper>
-
-      <StyledPaginationWrapper>
-        <StyledPagination>
-          <StyledPaginationButtonWrapper
-            $isActive={isGoBackActive}
-            onClick={handleGoBack}
-          >
-            <LeftArrowIcon isFilled={isGoBackActive} />
-          </StyledPaginationButtonWrapper>
-
-          <StyledIndicatorsWrapper>
-            {MOCK_SLIDER_DATA.map((_, index) => (
-              <PaginationStarIcon
-                key={index}
-                isFilled={index === sliderIndex}
-              />
-            ))}
-          </StyledIndicatorsWrapper>
-
-          <StyledPaginationButtonWrapper
-            $isActive={isGoForthActive}
-            onClick={handleGoForth}
-          >
-            <RightArrowIcon isFilled={isGoForthActive} />
-          </StyledPaginationButtonWrapper>
-        </StyledPagination>
-      </StyledPaginationWrapper>
+      <StyledSlider {...SETTINGS}>
+        {MOCK_SLIDER_DATA.map((data) => (
+          <SliderItem {...data} key={data.authorName} />
+        ))}
+      </StyledSlider>
     </StyledSliderWrapper>
   );
 };
 
-const StyledPaginationWrapper = styled.div`
-  display: grid;
-  grid-auto-flow: column;
-  justify-content: center;
-  align-items: center;
+const StyledSlider = styled(SlickSlider)`
+  .slick-list {
+    margin: 0 -1rem;
 
-  max-width: 100%;
-`;
+    ${respondTo('sm')(css`
+      margin: 0 -0.75rem;
+    `)}
+  }
 
-const StyledSliderWrapper = styled.div`
-  display: grid;
-  grid-auto-flow: row;
-  grid-row-gap: 7.5rem;
-  justify-content: center;
-  align-items: end;
+  .slick-slide > div {
+    padding: 0 1rem;
 
-  background-color: ${({ theme }) => theme.colors.dark};
-  border-radius: 2.875rem;
-  padding: 5.25rem 0 4rem;
+    ${respondTo('sm')(css`
+      padding: 0 0.75rem;
+    `)}
+  }
 
-  * {
-    user-select: none;
+  .slick-track {
+    display: flex;
+  }
+
+  .slick-slide {
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  .slick-dots {
+    position: relative;
+    top: 2rem;
   }
 `;
 
-const StyledPagination = styled.div`
-  display: grid;
-  grid-auto-flow: column;
-  justify-content: space-between;
-  align-items: center;
+const StyledSliderWrapper = styled.div`
+  background-color: ${({ theme }) => theme.colors.dark};
+  border-radius: 2.875rem;
+  padding: 4.25rem 0 6rem;
 
-  width: 53.75rem;
-`;
-
-const StyledIndicatorsWrapper = styled.div`
-  display: grid;
-  grid-auto-flow: column;
-  grid-column-gap: 1.25rem;
-  align-items: center;
-`;
-
-const StyledPaginationButtonWrapper = styled.div<{
-  $isActive: boolean;
-}>`
-  display: grid;
-  align-items: end;
-
-  cursor: ${(props) => (props.$isActive ? 'pointer' : 'default')};
-`;
-
-const StyledSliderItemsWrapper = styled.div`
-  overflow: hidden;
-  width: 100%;
-`;
-
-const StyledSliderOverlay = styled.div<{
-  $sliderIndex: number;
-}>`
-  display: grid;
-  grid-auto-flow: column;
-  grid-column-gap: 3rem;
-
-  position: relative;
-  transform: translateX(
-    calc(50% - ${({ $sliderIndex }) => $sliderIndex * 64.25}rem)
-  );
-  transition: all 0.4s ease-in-out;
-`;
-
-const StyledSliderItemWrapper = styled.div`
-  position: relative;
-  left: -50%;
+  border: 2px solid ${({ theme }) => theme.colors.green};
 `;
